@@ -5,14 +5,22 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     [Header("Stats")]
-    public Stat Damage;
-    public Stat DamagePerSecond;
+    public Stat damage;
+    public Stat damagePerSecond;
     [Header("Currency")]
-    public Stat Laughs;
+    public Stat laughs;
 
     [Header("Upgrades")]
-    public List<Upgrade> Upgrades;
+    public List<Upgrade> upgrades;
 
     [Header("Perks")]
-    public List<Perk> Perks;
+    public List<Perk> perks;
+
+    [Header("HighScores")]
+    public HighScores highScores;
+
+    [Header("Difficulty")]
+    public float currentDifficulty = 1f;
+    public int prestige = 0;
+
 }
