@@ -7,8 +7,15 @@ public class PlayerStats : MonoBehaviour
     [Header("Stats")]
     public Stat damage;
     public Stat damagePerSecond;
+
     [Header("Currency")]
-    public Stat laughs;
+    public float laughs;
+    public float prestigePoints;
+    public float prestigePointMultiplier;
+
+    [Header("Zone")]
+    public float currentStage;
+    public ZoneObject currentZone;
 
     [Header("Upgrades")]
     public List<Upgrade> upgrades;
