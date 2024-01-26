@@ -18,4 +18,7 @@ public class PlayerStats : MonoBehaviour
 
     [Header("HighScores")]
     public HighScores highScores;
+
+    [Header("Difficulty")]
+    public float currentDifficulty = 1f;
 }

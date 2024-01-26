@@ -2,7 +2,7 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "EnemyObjects/Boss")]
 
-public class BossObjects : ScriptableObject
+public class BossObject : ScriptableObject
 {
     [Header("Stats")]
     public float baseHealth;
