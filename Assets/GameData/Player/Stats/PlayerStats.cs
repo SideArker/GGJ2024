@@ -12,4 +12,7 @@ public class PlayerStats : MonoBehaviour
 
     [Header("Upgrades")]
     public List<Upgrade> Upgrades;
+
+    [Header("Perks")]
+    public List<Perk> Perks;
 }

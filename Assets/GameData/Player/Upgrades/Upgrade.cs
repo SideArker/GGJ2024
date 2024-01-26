@@ -10,6 +10,6 @@ public class Upgrade
     [Header("Cost")]
     public float currentCost;
 
-    [Header("Other")]
+    [Header("Object")]
     public UpgradeObject UpgradeObject;
 }

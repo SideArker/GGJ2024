@@ -1,9 +1,12 @@
 using UnityEngine;
 
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "PlayerObjects/Upgrade")]
 public class UpgradeObject : ScriptableObject
 {
+    [Header("Main")]
+    public string perkName;
+
     [Header("Stats")]
     public float damage;
     public float dps;
