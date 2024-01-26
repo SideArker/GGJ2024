@@ -6,18 +6,11 @@ public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
 
-    public PlayerStats playerStats;
+    public PlayerStats playerStats { get; private set; }
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-        }
+        Instance = this;
     }
 
     private void Start()
