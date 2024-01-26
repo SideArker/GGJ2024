@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public static Player Instance { get; private set; }
 
     public PlayerStats playerStats;
+    public Prestige playerPrestige;
 
     private void Awake()
     {

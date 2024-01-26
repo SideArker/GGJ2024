@@ -21,4 +21,6 @@ public class PlayerStats : MonoBehaviour
 
     [Header("Difficulty")]
     public float currentDifficulty = 1f;
+    public int prestige = 0;
+
 }

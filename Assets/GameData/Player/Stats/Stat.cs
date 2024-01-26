@@ -63,4 +63,12 @@ public class Stat
     {
         return baseValue;
     }
+
+    /// <summary>
+    /// Resets mods
+    /// </summary>
+    public void reset()
+    {
+        modifier = 1f;
+    }
 }
