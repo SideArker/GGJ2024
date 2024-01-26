@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 
 [System.Serializable]
@@ -8,5 +9,5 @@ public class Perk
     public string perkDescription;
 
     [Header("Object")]
-    public PerkObject PerkObject;
+    [Expandable] public PerkObject PerkObject;
 }

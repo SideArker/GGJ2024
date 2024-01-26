@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 
 [System.Serializable]
@@ -11,5 +12,5 @@ public class Upgrade
     public float currentCost;
 
     [Header("Object")]
-    public UpgradeObject UpgradeObject;
+    [Expandable]  public UpgradeObject UpgradeObject;
 }
