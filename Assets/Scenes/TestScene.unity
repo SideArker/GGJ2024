@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 775009990}
   - component: {fileID: 775009988}
   - component: {fileID: 775009991}
+  - component: {fileID: 775009992}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -155,14 +156,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage:
-    baseValue: 0
+    baseValue: 1
     modifier: 1
   damagePerSecond:
     baseValue: 0
     modifier: 1
-  laughs:
-    baseValue: 0
-    modifier: 1
+  laughs: 0
+  prestigePoints: 0
+  prestigePointMultiplier: 0
+  currentStage: 0
+  currentZone: {fileID: 11400000, guid: 35599ec3df2f46a43af1881f5acc0b1c, type: 2}
   upgrades: []
   perks: []
   highScores:
@@ -198,8 +201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b1c7212880e2d54898394d227f52d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 775009988}
-  playerPrestige: {fileID: 0}
 --- !u!114 &775009991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +214,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficultyIncrease: 0.1
+--- !u!114 &775009992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775009987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f676aa5db98aa5b44949d47e8b844ee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 7295657020457909610, guid: 0de30650827461f45931a78fecb54f80, type: 3}
+  bossPrefab: {fileID: 2295012041329199793, guid: 9fcc99e06c94eb045b4f598638ad134a, type: 3}
 --- !u!1 &1073526474
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,13 +508,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 775009987}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 775009992}
+        m_TargetAssemblyTypeName: ZoneController, Assembly-CSharp
+        m_MethodName: DamageEnemy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

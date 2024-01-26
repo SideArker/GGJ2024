@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180453ec4ecfe6c4685e8bfce6b984e1, type: 3}
   m_Name: Enemy3
   m_EditorClassIdentifier: 
-  baseHealth: 5
+  baseHealth: 15
   LaughsDropped: 5
   difficultyScaling: 0.3

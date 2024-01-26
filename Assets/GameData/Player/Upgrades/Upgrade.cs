@@ -12,5 +12,5 @@ public class Upgrade
     public float currentCost;
 
     [Header("Object")]
-    [Expandable]  public UpgradeObject UpgradeObject;
+    [Expandable] public UpgradeObject UpgradeObject;
 }

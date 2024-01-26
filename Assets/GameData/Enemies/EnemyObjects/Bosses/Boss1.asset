@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f8e879933c5dc4abdd7ab3f99628af, type: 3}
   m_Name: Boss1
   m_EditorClassIdentifier: 
-  baseHealth: 0
-  LaughsDropped: 0
-  regenTime: 0
-  difficultyScaling: 0
+  baseHealth: 20
+  LaughsDropped: 1000
+  regenTime: 5
+  difficultyScaling: 2
