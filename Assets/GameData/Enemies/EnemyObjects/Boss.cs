@@ -7,7 +7,8 @@ public class Boss : MonoBehaviour
     Player player;
 
     [Header("Stats")]
-    public float currentHealth;
+    public float currentHealth = 10;
+    public float baseHealth = 10;
     float laughAward;
 
     [Header("Other")]
@@ -36,12 +37,19 @@ public class Boss : MonoBehaviour
     {
         currentHealth = bossObject.baseHealth + difficulty * stage * bossObject.difficultyScaling;
         laughAward = bossObject.LaughsDropped + difficulty * stage * bossObject.difficultyScaling * 2.5f;
+        baseHealth = currentHealth;
+        Debug.Log(currentHealth);
     }
 
 
     public void TakeDamage()
     {
         currentHealth -= player.playerStats.damage.getModValue();
+        var playerStats = player.playerStats;
+        currentHealth -= playerStats.damage.getModValue();
+        Player.Instance.SetFunmeter(1 - (currentHealth / baseHealth));
+        //print($"currH: {currentHealth}, baseH: {enemyObject.baseHealth}");
+
     }
 
     void Update()
