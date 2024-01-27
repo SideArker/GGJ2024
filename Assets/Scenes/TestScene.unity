@@ -137,6 +137,8 @@ GameObject:
   - component: {fileID: 775009991}
   - component: {fileID: 775009992}
   - component: {fileID: 775009993}
+  - component: {fileID: 775009994}
+  - component: {fileID: 775009995}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -168,7 +170,6 @@ MonoBehaviour:
   currentStage: 1
   highestStage: 1
   currentZone: {fileID: 11400000, guid: 35599ec3df2f46a43af1881f5acc0b1c, type: 2}
-  upgrades: []
   perks: []
   highScores:
     totalLaughs: 0
@@ -242,6 +243,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50fefa66a72993a448ebc83ff7dd4e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &775009994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775009987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca04558c540348a41b1967504b0563f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &775009995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775009987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b876a42f23c7a42b1c30843aba887f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clownCostumePerks: []
+  funnyJokesPerks:
+  - {fileID: 11400000, guid: 02880cc75ea13894fb81bcf2eb2d7ae6, type: 2}
+  - {fileID: 11400000, guid: f2ae6d238b965ec4d9bef66f342866ee, type: 2}
+  - {fileID: 11400000, guid: 02ad5325c79cb9940b5e6dffbf1a71d3, type: 2}
+  - {fileID: 11400000, guid: 387df63d266b0444e8a1350e82b94b3a, type: 2}
+  - {fileID: 11400000, guid: 81fd7eeb4e954e544ad30c6eaad1fab6, type: 2}
+  - {fileID: 11400000, guid: 147a6b30c38445849a3dddb7dbc96f56, type: 2}
+  soundEffectsPerks: []
+  slipFallPerks: []
+  prankPerks: []
+  ticklingPerks: []
+  potionPerks: []
+  chipsPerks: []
 --- !u!1 &1073526474
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,13 +694,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 775009992}
-        m_TargetAssemblyTypeName: ZoneController, Assembly-CSharp
-        m_MethodName: DamageEnemy
-        m_Mode: 1
+      - m_Target: {fileID: 775009994}
+        m_TargetAssemblyTypeName: PerkController, Assembly-CSharp
+        m_MethodName: BuyPerk
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 098e774791b25e94898afc0cf23a3cc5, type: 2}
+          m_ObjectArgumentAssemblyTypeName: PerkObject, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

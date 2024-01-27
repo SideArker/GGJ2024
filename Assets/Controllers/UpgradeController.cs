@@ -23,6 +23,9 @@ public class UpgradeController : MonoBehaviour
         result.currentCost += Mathf.RoundToInt(result.currentCost * result.upgradeObject.multiPerLevel);
         player.playerStats.damage.addBaseValue(result.upgradeObject.damage);
         player.playerStats.damagePerSecond.addBaseValue(result.upgradeObject.dps);
+
+        PerkUnlocker.Instance.UnlockPerks(result.upgradeObject.upgradeType);
+
     }
 
     private void Start()

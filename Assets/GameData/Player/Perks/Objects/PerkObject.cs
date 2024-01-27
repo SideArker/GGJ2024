@@ -6,6 +6,12 @@ public class PerkObject : ScriptableObject
 {
     [Header("Main")]
     public string perkName;
+    public string perkDescription;
+
+    [Header("Unlock")]
+    public UpgradeType upgradeType;
+    public UpgradeObject upgradeNeeded;
+    public int amountNeeded;
 
     [Header("Stats")]
     public float damageMultiplier;
