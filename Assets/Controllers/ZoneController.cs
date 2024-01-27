@@ -5,6 +5,7 @@ using UnityEngine;
 public class ZoneController : MonoBehaviour
 {
     public static ZoneController instance;
+    public bool autoNextStage = true;
 
     [Header("Hierarchy")]
     [SerializeField] ZoneHierarchy zoneHierarchy;
@@ -40,7 +41,7 @@ public class ZoneController : MonoBehaviour
     public void ChangeZone()
     {
         int zoneIndex = Array.IndexOf(zoneHierarchy.Zones, player.playerStats.currentZone) + 1;
-        if(zoneIndex > zoneHierarchy.Zones.Length - 1)
+        if (zoneIndex > zoneHierarchy.Zones.Length - 1)
         {
             zoneIndex = 0;
         }
@@ -68,7 +69,7 @@ public class ZoneController : MonoBehaviour
 
     public void ChangeEnemy()
     {
-        player.playerStats.currentStage++;
+        if (autoNextStage) player.playerStats.currentStage++;
         player.playerStats.currentDifficulty += .2f;
 
         if (player.playerStats.highestStage < player.playerStats.currentStage)
@@ -89,8 +90,21 @@ public class ZoneController : MonoBehaviour
             Enemy enemy = Instantiate(enemyPrefab);
             int randomEnemy = UnityEngine.Random.Range(0, currentZone.enemies.Count - 1);
             enemy.SetEnemyObject(currentZone.enemies[randomEnemy]);
-            enemy.SetStats(player.playerStats.currentDifficulty, player.playerStats.currentStage);  
+            enemy.SetStats(player.playerStats.currentDifficulty, player.playerStats.currentStage);
             currentEnemy = enemy;
+        }
+    }
+    public void ChangeStage(int stage)
+    {
+        if (stage - 1 < player.playerStats.highestStage)
+        {
+            player.playerStats.currentStage = stage;
+            ChangeEnemy();
+        }
+        else
+        {
+            player.playerStats.currentStage = player.playerStats.highestStage - 1;
+            ChangeEnemy();
         }
     }
 }
