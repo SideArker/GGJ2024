@@ -131,15 +131,30 @@ public class ZoneController : MonoBehaviour
         if (!isEnemyAlive)
         {
             player.playerStats.currentStage++;
-            stageText.text = "Stage: "+ player.playerStats.currentStage;
+            stageText.text = "Stage: " + player.playerStats.currentStage;
             player.playerStats.currentDifficulty = player.playerStats.currentStage * .2f + 1;
-        }
             ChangeEnemy();
+        }
     }
     public void PreviousStage()
     {
-        if (!isEnemyAlive && player.playerStats.currentStage > 1)
+        if (player.playerStats.currentStage > 1)
         {
+            isEnemyAlive = false;
+            try
+            {
+                Destroy(currentEnemy.gameObject);
+                print("fucking shit");
+            }
+            catch
+            {
+                try
+                {
+                    Destroy(currentBoss.gameObject);
+                }
+                catch { }
+            }
+
             player.playerStats.currentStage--;
             stageText.text = "Stage: " + player.playerStats.currentStage;
 
