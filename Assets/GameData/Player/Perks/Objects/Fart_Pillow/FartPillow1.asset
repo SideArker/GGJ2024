@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4e9e557bc394bd4996b34ff3f42ca07, type: 3}
-  m_Name: JokeBook2
+  m_Name: FartPillow1
   m_EditorClassIdentifier: 
-  perkName: Joke book
+  perkName: Fart Pillow
   perkDescription: 
-  upgradeType: 1
-  upgradeNeeded: {fileID: 11400000, guid: 8a3e77ab607a27e4bbf3d0b4f8b16dec, type: 2}
+  upgradeType: 4
+  upgradeNeeded: {fileID: 11400000, guid: 76f148443b8a8ff428e5d9ead38ddd50, type: 2}
   amountNeeded: 10
+  upgradeGainMultiplier: 1
   damageMultiplier: 0
   dpsMultiplier: 0
   Cost: 0
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 33bd69b354ba0104da08f2d56b0f54b3, type: 3}

@@ -50,10 +50,6 @@ public class Tooltip : MonoBehaviour
 
     void Update()
     {
-
-        transform.position = new Vector2(Input.mousePosition.x * scaler.referenceResolution.x / Screen.width * 1.225f, Input.mousePosition.y * scaler.referenceResolution.y / Screen.height);
+        transform.position = new Vector3(Input.mousePosition.x * 1.20f, Input.mousePosition.y, Input.mousePosition.z);
     }
-
-
-
 }

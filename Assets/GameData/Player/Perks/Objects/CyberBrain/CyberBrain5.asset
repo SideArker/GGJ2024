@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4e9e557bc394bd4996b34ff3f42ca07, type: 3}
-  m_Name: JokeBook5
+  m_Name: CyberBrain5
   m_EditorClassIdentifier: 
-  perkName: Joke book
+  perkName: Cyber Brain
   perkDescription: 
-  upgradeType: 1
-  upgradeNeeded: {fileID: 11400000, guid: 8a3e77ab607a27e4bbf3d0b4f8b16dec, type: 2}
-  amountNeeded: 50
+  upgradeType: 7
+  upgradeNeeded: {fileID: 11400000, guid: 7ec29666699473249b91065c3c2a9213, type: 2}
+  amountNeeded: 250
+  upgradeGainMultiplier: 10
   damageMultiplier: 0
   dpsMultiplier: 0
   Cost: 0
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: e180b6476fd211b469df4dd1a0055b23, type: 3}

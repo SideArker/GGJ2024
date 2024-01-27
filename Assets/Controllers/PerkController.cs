@@ -3,6 +3,8 @@ using UnityEngine;
 public class PerkController : MonoBehaviour
 {
 
+    public static PerkController Instance;
+
     Player player;
     public void BuyPerk(PerkObject perkObject)
     {
@@ -35,5 +37,9 @@ public class PerkController : MonoBehaviour
     private void Start()
     {
         player = Player.Instance;
+    }
+    private void Awake()
+    {
+        Instance = this;
     }
 }
