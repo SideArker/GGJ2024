@@ -58,6 +58,13 @@ public class ZoneController : MonoBehaviour
     public void ChangeEnemy()
     {
         player.playerStats.currentStage++;
+        player.playerStats.currentDifficulty += .2f;
+
+        if (player.playerStats.highestStage < player.playerStats.currentStage)
+        {
+            player.playerStats.highestStage = player.playerStats.currentStage;
+        }
+
         ZoneObject currentZone = player.playerStats.currentZone;
         if (player.playerStats.currentStage % 10 == 0)
         {
@@ -71,6 +78,7 @@ public class ZoneController : MonoBehaviour
             Enemy enemy = Instantiate(enemyPrefab);
             int randomEnemy = UnityEngine.Random.Range(0, currentZone.enemies.Count - 1);
             enemy.SetEnemyObject(currentZone.enemies[randomEnemy]);
+            enemy.SetStats(player.playerStats.currentDifficulty, player.playerStats.currentStage);
             currentEnemy = enemy;
         }
     }

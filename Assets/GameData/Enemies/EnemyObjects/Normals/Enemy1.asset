@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseHealth: 5
   LaughsDropped: 5
-  difficultyScaling: 0.3
+  difficultyScaling: 1

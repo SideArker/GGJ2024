@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f1561d258b06a74d9b7eed78cc7733b, type: 3}
   m_Name: FunnyTexts
   m_EditorClassIdentifier: 
-  damage: 1
-  dps: 0
+  perkName: Funny Texts
+  damage: 0
+  dps: 1
   baseCost: 10
-  multiPerLevel: 0.3
+  multiPerLevel: 0.15
   icon: {fileID: 21300000, guid: 94f9d913367649b469d5167271964126, type: 3}
