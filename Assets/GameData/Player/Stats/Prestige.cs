@@ -5,7 +5,6 @@ using UnityEngine;
 public class Prestige : MonoBehaviour
 {
     PlayerStats playerStats;
-    [SerializeField] float difficultyIncrease = 0.1f;
     private void Start()
     {
         playerStats = Player.Instance.playerStats;
@@ -18,7 +17,6 @@ public class Prestige : MonoBehaviour
         playerStats.laughs = 0;
         playerStats.upgrades = new List<Upgrade>();
         playerStats.perks = new List<Perk>();
-        playerStats.currentDifficulty += difficultyIncrease;
     }
 
 }
