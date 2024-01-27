@@ -17,7 +17,8 @@ MonoBehaviour:
   upgradeType: 1
   upgradeNeeded: {fileID: 11400000, guid: 8a3e77ab607a27e4bbf3d0b4f8b16dec, type: 2}
   amountNeeded: 5
+  upgradeGainMultiplier: 1
   damageMultiplier: 0
   dpsMultiplier: 0
   Cost: 0
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: a4baac4fdf89a5144a7b2a6f21bb791b, type: 3}

@@ -6,7 +6,7 @@ public class UpgradeObject : ScriptableObject
 {
     [Header("Main")]
     public UpgradeType upgradeType;
-    public string perkName;
+    public string upgradeName;
 
     [Header("Stats")]
     public float damage;

@@ -1,6 +1,7 @@
 using NaughtyAttributes;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ZoneController : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class ZoneController : MonoBehaviour
     [SerializeField] Enemy enemyPrefab;
     [SerializeField] Boss bossPrefab;
 
+    [Header("Prefabs")]
+    [SerializeField] Sprite[] pauseBtnSprites;
+        
     Player player;
 
     Enemy currentEnemy;
@@ -47,7 +51,8 @@ public class ZoneController : MonoBehaviour
         }
 
         player.playerStats.currentZone = zoneHierarchy.Zones[zoneIndex];
-        ChangeEnemy();
+        AutoNextStage();
+        //ChangeEnemy();
     }
 
     void ClickCooldown()
@@ -69,8 +74,6 @@ public class ZoneController : MonoBehaviour
 
     public void ChangeEnemy()
     {
-        if (autoNextStage) player.playerStats.currentStage++;
-        player.playerStats.currentDifficulty += .2f;
 
         if (player.playerStats.highestStage < player.playerStats.currentStage)
         {
@@ -94,16 +97,50 @@ public class ZoneController : MonoBehaviour
             currentEnemy = enemy;
         }
     }
+    public void SwitchAutoNextStage(Image img)
+    {
+        if (autoNextStage)
+        {
+            autoNextStage = false;
+            img.sprite = pauseBtnSprites[0];
+        }
+        else
+        {
+            autoNextStage = true;
+            img.sprite = pauseBtnSprites[1];
+        }
+    }
+    public void AutoNextStage()
+    {
+        if (autoNextStage) NextStage();
+    }
+
+    public void NextStage()
+    {
+        player.playerStats.currentStage++;
+        player.playerStats.currentDifficulty = player.playerStats.currentStage * .2f + 1;
+        ChangeEnemy();
+    }
+    public void PreviousStage()
+    {
+        player.playerStats.currentStage++;
+        player.playerStats.currentDifficulty = player.playerStats.currentStage * .2f + 1;
+        ChangeEnemy();
+    }
     public void ChangeStage(int stage)
     {
         if (stage - 1 < player.playerStats.highestStage)
         {
             player.playerStats.currentStage = stage;
+            player.playerStats.currentDifficulty = player.playerStats.currentStage * .2f + 1;
+
             ChangeEnemy();
         }
         else
         {
             player.playerStats.currentStage = player.playerStats.highestStage - 1;
+            player.playerStats.currentDifficulty = player.playerStats.currentStage * .2f + 1;
+
             ChangeEnemy();
         }
     }
