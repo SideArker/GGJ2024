@@ -14,6 +14,7 @@ public class PerkObject : ScriptableObject
     public int amountNeeded;
 
     [Header("Stats")]
+    public float upgradeGainMultiplier;
     public float damageMultiplier;
     public float dpsMultiplier;
 

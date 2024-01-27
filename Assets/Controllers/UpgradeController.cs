@@ -15,14 +15,21 @@ public class UpgradeController : MonoBehaviour
         else
         {
             if (player.playerStats.laughs < upgradeObject.baseCost) return;
-            result = new Upgrade(upgradeObject.name, 1, upgradeObject.baseCost, upgradeObject); ;
+            result = new Upgrade(upgradeObject.name, 1, upgradeObject.baseCost, upgradeObject);
             player.playerStats.upgrades.Add(result);
         }
         player.playerStats.laughs -= result.currentCost;
         
         result.currentCost += Mathf.RoundToInt(result.currentCost * result.upgradeObject.multiPerLevel);
-        player.playerStats.damage.addBaseValue(result.upgradeObject.damage);
-        player.playerStats.damagePerSecond.addBaseValue(result.upgradeObject.dps);
+
+        player.playerStats.damage.remBaseValue(result.scaledDamage);
+        player.playerStats.damagePerSecond.remBaseValue(result.scaledDPS);
+
+        result.scaledDamage = result.Level * result.upgradeObject.damage * result.modifier;
+        result.scaledDPS = result.Level * result.upgradeObject.dps * result.modifier;
+
+        player.playerStats.damage.addBaseValue(result.scaledDamage);
+        player.playerStats.damagePerSecond.addBaseValue(result.scaledDPS);
 
         PerkUnlocker.Instance.UnlockPerks(result.upgradeObject.upgradeType);
 
