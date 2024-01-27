@@ -1,5 +1,6 @@
 using NaughtyAttributes;
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,6 +21,7 @@ public class ZoneController : MonoBehaviour
 
     [Header("Other")]
     [SerializeField] Transform spawnPos;
+    [SerializeField] TMP_Text stageText;
 
     Player player;
 
@@ -38,6 +40,8 @@ public class ZoneController : MonoBehaviour
     {
         player = Player.Instance;
         ZoneObject currentZone = player.playerStats.currentZone;
+        stageText.text = "Stage: " + player.playerStats.currentStage;
+
 
         // On zone startv
         isEnemyAlive = true;
@@ -123,18 +127,24 @@ public class ZoneController : MonoBehaviour
     }
     public void NextStage()
     {
-        if(!isEnemyAlive)
+        if (!isEnemyAlive)
         {
             player.playerStats.currentStage++;
+            stageText.text = "Stage: "+ player.playerStats.currentStage;
             player.playerStats.currentDifficulty = player.playerStats.currentStage * .2f + 1;
-            ChangeEnemy();
         }
+            ChangeEnemy();
     }
     public void PreviousStage()
     {
-        player.playerStats.currentStage++;
-        player.playerStats.currentDifficulty = player.playerStats.currentStage * .2f + 1;
-        ChangeEnemy();
+        if (!isEnemyAlive && player.playerStats.currentStage > 1)
+        {
+            player.playerStats.currentStage--;
+            stageText.text = "Stage: " + player.playerStats.currentStage;
+
+            player.playerStats.currentDifficulty = player.playerStats.currentStage * .2f + 1;
+            ChangeEnemy();
+        }
     }
     public void ChangeStage(int stage)
     {

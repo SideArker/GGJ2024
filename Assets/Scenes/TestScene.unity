@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &135619610 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 135619610, guid: 49457b864ad736b46820bbc58d3b04da, type: 3}
+  m_PrefabInstance: {fileID: 2390006461541335415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &775009993 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 44626147294933037, guid: aad8f4c1a42f1b34faf581313ebb84ad, type: 3}
@@ -407,6 +418,10 @@ PrefabInstance:
       propertyPath: spawnPos
       value: 
       objectReference: {fileID: 1050926200}
+    - target: {fileID: 44626147294933036, guid: aad8f4c1a42f1b34faf581313ebb84ad, type: 3}
+      propertyPath: stageText
+      value: 
+      objectReference: {fileID: 135619610}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -420,29 +435,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 386604904, guid: 49457b864ad736b46820bbc58d3b04da, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 775009994}
     - target: {fileID: 671791946088745227, guid: 49457b864ad736b46820bbc58d3b04da, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 671791946088745227, guid: 49457b864ad736b46820bbc58d3b04da, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 671791946088745227, guid: 49457b864ad736b46820bbc58d3b04da, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 671791946088745227, guid: 49457b864ad736b46820bbc58d3b04da, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 671791946088745227, guid: 49457b864ad736b46820bbc58d3b04da, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 671791946088745227, guid: 49457b864ad736b46820bbc58d3b04da, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 2390006460538178322, guid: 49457b864ad736b46820bbc58d3b04da, type: 3}
       propertyPath: m_Name
