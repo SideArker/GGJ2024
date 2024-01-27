@@ -34,9 +34,8 @@ public class Boss : MonoBehaviour
 
     public void SetStats(float difficulty, int stage)
     {
-        currentHealth = bossObject.baseHealth + difficulty * stage * bossObject.difficultyScaling * 1.35f;
-        laughAward = bossObject.LaughsDropped + difficulty * stage * bossObject.difficultyScaling * 1.25f;
-        Debug.Log(currentHealth);
+        currentHealth = bossObject.baseHealth + difficulty * stage * bossObject.difficultyScaling;
+        laughAward = bossObject.LaughsDropped + difficulty * stage * bossObject.difficultyScaling * 2.5f;
     }
 
 
@@ -70,9 +69,11 @@ public class Boss : MonoBehaviour
     {
         player = Player.Instance;
 
-        currentHealth = bossObject.baseHealth;
-        laughAward = bossObject.LaughsDropped;
-
+        if(currentHealth == 0)
+        {
+            currentHealth = bossObject.baseHealth;
+            laughAward = bossObject.LaughsDropped;
+        }
         timer.Elapsed += new ElapsedEventHandler(ResetBoss);
         timer.Interval = bossObject.regenTime * 1000;
         timer.Start();

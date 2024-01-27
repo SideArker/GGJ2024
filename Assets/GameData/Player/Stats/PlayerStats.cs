@@ -23,11 +23,13 @@ public class PlayerStats : MonoBehaviour
     [Header("Perks")]
     public List<Perk> perks;
 
+    [Header("PrestigePerks")]
+    public List<PrestigePerk> prestigePerks;
+
     [Header("HighScores")]
     public HighScores highScores;
 
     [Header("Difficulty")]
     public float currentDifficulty = 1f;
-    public int prestige = 0;
 
 }

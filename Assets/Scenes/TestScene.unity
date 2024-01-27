@@ -11243,6 +11243,14 @@ PrefabInstance:
       propertyPath: damage.baseValue
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 44626147294933024, guid: aad8f4c1a42f1b34faf581313ebb84ad, type: 3}
+      propertyPath: prestigePerks.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 44626147294933024, guid: aad8f4c1a42f1b34faf581313ebb84ad, type: 3}
+      propertyPath: prestigePerks.Array.data[0].perkName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 44626147294933025, guid: aad8f4c1a42f1b34faf581313ebb84ad, type: 3}
       propertyPath: m_RootOrder
       value: 0
