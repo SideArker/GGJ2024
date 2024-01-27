@@ -1,6 +1,7 @@
 using NaughtyAttributes;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ZoneController : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class ZoneController : MonoBehaviour
     [SerializeField] Enemy enemyPrefab;
     [SerializeField] Boss bossPrefab;
 
+    [Header("Prefabs")]
+    [SerializeField] Sprite[] pauseBtnSprites;
+        
     Player player;
 
     Enemy currentEnemy;
@@ -93,9 +97,18 @@ public class ZoneController : MonoBehaviour
             currentEnemy = enemy;
         }
     }
-    public void SwitchAutoNextStage()
+    public void SwitchAutoNextStage(Image img)
     {
-        autoNextStage = !autoNextStage;
+        if (autoNextStage)
+        {
+            autoNextStage = false;
+            img.sprite = pauseBtnSprites[0];
+        }
+        else
+        {
+            autoNextStage = true;
+            img.sprite = pauseBtnSprites[1];
+        }
     }
     public void AutoNextStage()
     {
