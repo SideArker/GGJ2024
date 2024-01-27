@@ -15,9 +15,12 @@ public class ZoneController : MonoBehaviour
     [SerializeField] Enemy enemyPrefab;
     [SerializeField] Boss bossPrefab;
 
-    [Header("Prefabs")]
+    [Header("Btn Sprites")]
     [SerializeField] Sprite[] pauseBtnSprites;
-        
+
+    [Header("Other")]
+    [SerializeField] Transform spawnPos;
+
     Player player;
 
     Enemy currentEnemy;
@@ -36,7 +39,7 @@ public class ZoneController : MonoBehaviour
         ZoneObject currentZone = player.playerStats.currentZone;
 
         // On zone start
-        Enemy enemy = Instantiate(enemyPrefab);
+        Enemy enemy = Instantiate(enemyPrefab, spawnPos);
         int randomEnemy = UnityEngine.Random.Range(0, currentZone.enemies.Count - 1);
         enemy.SetEnemyObject(currentZone.enemies[randomEnemy]);
         currentEnemy = enemy;
@@ -63,6 +66,7 @@ public class ZoneController : MonoBehaviour
 
     public void DamageEnemy()
     {
+        print("DAMAGE!!!!!!!!!!!");
         if (clickCooldown) return;
         clickCooldown = true;
         if (currentBoss) currentBoss.TakeDamage();
@@ -84,14 +88,14 @@ public class ZoneController : MonoBehaviour
         if (player.playerStats.currentStage % 10 == 0)
         {
             Debug.Log("Spawn boss");
-            Boss boss = Instantiate(bossPrefab);
+            Boss boss = Instantiate(bossPrefab, spawnPos);
             boss.SetBossObject(currentZone.boss);
             currentBoss = boss;
         }
         else
         {
-            Enemy enemy = Instantiate(enemyPrefab);
-            int randomEnemy = UnityEngine.Random.Range(0, currentZone.enemies.Count - 1);
+            Enemy enemy = Instantiate(enemyPrefab, spawnPos);
+            int randomEnemy = UnityEngine.Random.Range(0, currentZone.enemies.Count);
             enemy.SetEnemyObject(currentZone.enemies[randomEnemy]);
             enemy.SetStats(player.playerStats.currentDifficulty, player.playerStats.currentStage);
             currentEnemy = enemy;
@@ -114,7 +118,6 @@ public class ZoneController : MonoBehaviour
     {
         if (autoNextStage) NextStage();
     }
-
     public void NextStage()
     {
         player.playerStats.currentStage++;
