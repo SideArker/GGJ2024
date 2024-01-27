@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             currentHealth -= player.playerStats.damagePerSecond.getModValue();
+            Debug.Log("Damage dealt: " + player.playerStats.damagePerSecond.getModValue());
         }
 
     }
@@ -54,7 +55,6 @@ public class Enemy : MonoBehaviour
     {
         currentHealth = enemyObject.baseHealth + difficulty * stage * enemyObject.difficultyScaling * 1.75f;
         laughAward = enemyObject.LaughsDropped + difficulty * stage * enemyObject.difficultyScaling * 1.5f;
-        Debug.Log(currentHealth);
     }
 
     void Start()
