@@ -37,8 +37,10 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage()
     {
+        bool isCrit = Random.Range(0,100) <= Player.Instance.playerStats.critChance.getModValue();
+        print(isCrit);
         var playerStats = player.playerStats;
-        currentHealth -= playerStats.damage.getModValue();
+        currentHealth -= playerStats.damage.getModValue() * (isCrit ? playerStats.critMultilier.getModValue() : 1);
         Player.Instance.SetFunmeter(1 - (currentHealth / baseHealth));
         //print($"currH: {currentHealth}, baseH: {enemyObject.baseHealth}");
     }

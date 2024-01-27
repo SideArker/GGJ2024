@@ -72,7 +72,7 @@ public class ZoneController : MonoBehaviour
 
     public void DamageEnemy()
     {
-        print("DAMAGE!!!!!!!!!!!");
+        //print("DAMAGE!!!!!!!!!!!");
         if (clickCooldown) return;
         clickCooldown = true;
         if (currentBoss) currentBoss.TakeDamage();
