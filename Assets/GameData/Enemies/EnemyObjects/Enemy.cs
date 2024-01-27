@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 
 [System.Serializable]
 public class Enemy : MonoBehaviour
@@ -8,6 +9,7 @@ public class Enemy : MonoBehaviour
 
     [Header("Stats")]
     public float currentHealth = 10;
+    public float baseHealth = 10;
     public float laughAward = 10;
 
     [Header("Other")]
@@ -35,14 +37,17 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage()
     {
-        currentHealth -= player.playerStats.damage.getModValue();
+        var playerStats = player.playerStats;
+        currentHealth -= playerStats.damage.getModValue();
+        Player.Instance.SetFunmeter(1 - (currentHealth / baseHealth));
+        //print($"currH: {currentHealth}, baseH: {enemyObject.baseHealth}");
     }
 
     void Update()
     {
         if (currentHealth <= 0)
         {
-            Debug.Log("Enemy dead");
+            //Debug.Log("Enemy dead");
             ZoneController.instance.isEnemyAlive = false;
             player.playerStats.laughs += laughAward;
             ZoneController.instance.AutoNextStage();
@@ -55,6 +60,7 @@ public class Enemy : MonoBehaviour
     public void SetStats(float difficulty, int stage)
     {
         currentHealth = enemyObject.baseHealth + difficulty * stage * enemyObject.difficultyScaling * 1.75f;
+        baseHealth = currentHealth;
         laughAward = enemyObject.LaughsDropped + difficulty * stage * enemyObject.difficultyScaling * 1.5f;
     }
 
