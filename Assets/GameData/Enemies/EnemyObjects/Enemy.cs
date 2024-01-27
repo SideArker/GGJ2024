@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("Enemy dead");
             player.playerStats.laughs += laughAward;
-            ZoneController.instance.ChangeEnemy();
+            ZoneController.instance.AutoNextStage();
             Destroy(gameObject);
         }
         if(!runTick) StartCoroutine(TickDamage());
