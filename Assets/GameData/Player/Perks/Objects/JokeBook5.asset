@@ -16,7 +16,7 @@ MonoBehaviour:
   perkDescription: 
   upgradeType: 1
   upgradeNeeded: {fileID: 11400000, guid: 8a3e77ab607a27e4bbf3d0b4f8b16dec, type: 2}
-  amountNeeded: 0
+  amountNeeded: 50
   damageMultiplier: 0
   dpsMultiplier: 0
   Cost: 0

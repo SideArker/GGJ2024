@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f1561d258b06a74d9b7eed78cc7733b, type: 3}
   m_Name: FunnyTexts
   m_EditorClassIdentifier: 
+  upgradeType: 1
   perkName: Funny Texts
   damage: 0
   dps: 1
