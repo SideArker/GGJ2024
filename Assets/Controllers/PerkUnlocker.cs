@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PerkUnlocker : MonoBehaviour
 {
     public static PerkUnlocker Instance;
+
+    public List<PerkObject> unlockedPerks;
 
     [SerializeField] PerkObject[] clownCostumePerks;
     [SerializeField] PerkObject[] funnyJokesPerks;
@@ -76,6 +79,7 @@ public class PerkUnlocker : MonoBehaviour
             {
                 Debug.Log("Found matching perk");
                 Debug.Log(perk);
+                unlockedPerks.Add(perk);
             };
         }
 

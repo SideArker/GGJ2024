@@ -1,0 +1,163 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &44626147294933031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 44626147294933025}
+  - component: {fileID: 44626147294933026}
+  - component: {fileID: 44626147294933024}
+  - component: {fileID: 44626147294933027}
+  - component: {fileID: 44626147294933036}
+  - component: {fileID: 44626147294933037}
+  - component: {fileID: 44626147294933038}
+  - component: {fileID: 44626147294933039}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &44626147294933025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44626147294933031}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.1070642, y: 1.6660957, z: 0.008760447}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &44626147294933026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44626147294933031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1c7212880e2d54898394d227f52d8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &44626147294933024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44626147294933031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 056577f765b7267439e260b474109c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage:
+    baseValue: 25
+    modifier: 1
+  damagePerSecond:
+    baseValue: 0
+    modifier: 1
+  laughs: 1000
+  prestigePoints: 0
+  prestigePointMultiplier: 0
+  currentStage: 1
+  highestStage: 1
+  currentZone: {fileID: 11400000, guid: 35599ec3df2f46a43af1881f5acc0b1c, type: 2}
+  upgrades: []
+  perks: []
+  highScores:
+    totalLaughs: 0
+    timeAfterPrestige: 0
+    timeSinceStarted: 0
+  currentDifficulty: 1
+  prestige: 0
+--- !u!114 &44626147294933027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44626147294933031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d447fd6864173d34396e84a7679860fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &44626147294933036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44626147294933031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f676aa5db98aa5b44949d47e8b844ee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoNextStage: 1
+  zoneHierarchy: {fileID: 11400000, guid: db88cf816dbeaa344a9a997b1c331767, type: 2}
+  enemyPrefab: {fileID: 7295657020457909610, guid: 0de30650827461f45931a78fecb54f80, type: 3}
+  bossPrefab: {fileID: 2295012041329199793, guid: 9fcc99e06c94eb045b4f598638ad134a, type: 3}
+--- !u!114 &44626147294933037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44626147294933031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50fefa66a72993a448ebc83ff7dd4e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &44626147294933038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44626147294933031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca04558c540348a41b1967504b0563f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &44626147294933039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44626147294933031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b876a42f23c7a42b1c30843aba887f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unlockedPerks: []
+  clownCostumePerks: []
+  funnyJokesPerks:
+  - {fileID: 11400000, guid: 02880cc75ea13894fb81bcf2eb2d7ae6, type: 2}
+  - {fileID: 11400000, guid: f2ae6d238b965ec4d9bef66f342866ee, type: 2}
+  - {fileID: 11400000, guid: 02ad5325c79cb9940b5e6dffbf1a71d3, type: 2}
+  - {fileID: 11400000, guid: 387df63d266b0444e8a1350e82b94b3a, type: 2}
+  - {fileID: 11400000, guid: 81fd7eeb4e954e544ad30c6eaad1fab6, type: 2}
+  - {fileID: 11400000, guid: 147a6b30c38445849a3dddb7dbc96f56, type: 2}
+  soundEffectsPerks: []
+  slipFallPerks: []
+  prankPerks: []
+  ticklingPerks: []
+  potionPerks: []
+  chipsPerks: []
