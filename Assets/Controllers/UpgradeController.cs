@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 
 public class UpgradeController : MonoBehaviour
@@ -12,17 +11,28 @@ public class UpgradeController : MonoBehaviour
         {
             if (player.playerStats.laughs < result.currentCost) return;
             result.Level++;
-            player.playerStats.laughs -= result.currentCost;
-            result.currentCost += Mathf.RoundToInt(result.currentCost * result.upgradeObject.multiPerLevel);
         }
         else
         {
             if (player.playerStats.laughs < upgradeObject.baseCost) return;
-            Upgrade upgrade = new Upgrade(upgradeObject.name, 1, upgradeObject.baseCost, upgradeObject); ;
-            player.playerStats.upgrades.Add(upgrade);
-            player.playerStats.laughs -= upgrade.currentCost;
-            upgrade.currentCost += Mathf.RoundToInt(upgrade.currentCost * upgrade.upgradeObject.multiPerLevel);
+            result = new Upgrade(upgradeObject.name, 1, upgradeObject.baseCost, upgradeObject);
+            player.playerStats.upgrades.Add(result);
         }
+        player.playerStats.laughs -= result.currentCost;
+        
+        result.currentCost += Mathf.RoundToInt(result.currentCost * result.upgradeObject.multiPerLevel);
+
+        player.playerStats.damage.remBaseValue(result.scaledDamage);
+        player.playerStats.damagePerSecond.remBaseValue(result.scaledDPS);
+
+        result.scaledDamage = result.Level * result.upgradeObject.damage * result.modifier;
+        result.scaledDPS = result.Level * result.upgradeObject.dps * result.modifier;
+
+        player.playerStats.damage.addBaseValue(result.scaledDamage);
+        player.playerStats.damagePerSecond.addBaseValue(result.scaledDPS);
+
+        PerkUnlocker.Instance.UnlockPerks(result.upgradeObject.upgradeType);
+
     }
 
     private void Start()
