@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4e9e557bc394bd4996b34ff3f42ca07, type: 3}
-  m_Name: JokeBook4
+  m_Name: Cauldron2
   m_EditorClassIdentifier: 
-  perkName: Joke book
+  perkName: Cauldron
   perkDescription: 
-  upgradeType: 1
-  upgradeNeeded: {fileID: 11400000, guid: 8a3e77ab607a27e4bbf3d0b4f8b16dec, type: 2}
-  amountNeeded: 50
+  upgradeType: 6
+  upgradeNeeded: {fileID: 11400000, guid: f94d24688fe907746b4ccd8b43c7d7a6, type: 2}
+  amountNeeded: 25
+  upgradeGainMultiplier: 1
   damageMultiplier: 0
   dpsMultiplier: 0
   Cost: 0
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 4da9fa4bd4ed62844b01015e16897568, type: 3}

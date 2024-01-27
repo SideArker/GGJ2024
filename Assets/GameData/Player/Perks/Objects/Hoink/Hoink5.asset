@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4e9e557bc394bd4996b34ff3f42ca07, type: 3}
-  m_Name: JokeBook3
+  m_Name: Hoink5
   m_EditorClassIdentifier: 
-  perkName: Joke book
+  perkName: Hoink
   perkDescription: 
-  upgradeType: 1
-  upgradeNeeded: {fileID: 11400000, guid: 8a3e77ab607a27e4bbf3d0b4f8b16dec, type: 2}
-  amountNeeded: 15
-  damageMultiplier: 0
+  upgradeType: 0
+  upgradeNeeded: {fileID: 11400000, guid: a6eb8390e14f1a947ac62fc2d25791a9, type: 2}
+  amountNeeded: 250
+  upgradeGainMultiplier: 0
+  damageMultiplier: 10
   dpsMultiplier: 0
-  Cost: 0
-  icon: {fileID: 0}
+  Cost: 500000
+  icon: {fileID: 21300000, guid: a0a31b880f4d39641b44fb3528175a0f, type: 3}
