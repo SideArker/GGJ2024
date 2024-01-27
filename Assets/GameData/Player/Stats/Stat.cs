@@ -16,7 +16,7 @@ public class Stat
     /// <param name="value">Value to add</param>
     public void addBaseValue(float value)
     {
-        value += value;
+        baseValue += value;
     }
 
     /// <summary>
@@ -25,7 +25,7 @@ public class Stat
     /// <param name="value">Value to remove</param>
     public void remBaseValue(float value)
     {
-        value -= value;
+        baseValue -= value;
     }
 
     /// <summary>
@@ -34,7 +34,7 @@ public class Stat
     /// <param name="modifier">the value to add</param>
     public void addModifier(float modifier)
     {
-        modifier += modifier;
+        modValue += modifier;
     }
 
     /// <summary>
@@ -43,7 +43,7 @@ public class Stat
     /// <param name="modifier">the value to remove</param>
     public void remModifier(float modifier)
     {
-        modifier -= modifier;
+        modValue -= modifier;
     }
 
     /// <summary>
