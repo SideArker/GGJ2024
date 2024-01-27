@@ -106,6 +106,7 @@ public class ZoneController : MonoBehaviour
             enemy.SetEnemyObject(currentZone.enemies[randomEnemy]);
             enemy.SetStats(player.playerStats.currentDifficulty, player.playerStats.currentStage);
             currentEnemy = enemy;
+            print(currentEnemy.currentHealth);
         }
     }
     public void SwitchAutoNextStage(Image img)

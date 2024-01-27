@@ -7,8 +7,8 @@ public class Enemy : MonoBehaviour
     Player player;
 
     [Header("Stats")]
-    public float currentHealth;
-    float laughAward;
+    public float currentHealth = 10;
+    public float laughAward = 10;
 
     [Header("Other")]
     [HideInInspector] public EnemyObject enemyObject;
@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
     {
         player = Player.Instance;
 
-        currentHealth = enemyObject.baseHealth;
-        laughAward = enemyObject.LaughsDropped;
+        //currentHealth = enemyObject.baseHealth;
+        //laughAward = enemyObject.LaughsDropped;
     }
 }
