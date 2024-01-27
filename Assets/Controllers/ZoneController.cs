@@ -18,6 +18,8 @@ public class ZoneController : MonoBehaviour
     Enemy currentEnemy;
     Boss currentBoss;
 
+    bool clickCooldown = false;
+
     private void Awake()
     {
         instance = this;
@@ -47,12 +49,21 @@ public class ZoneController : MonoBehaviour
         ChangeEnemy();
     }
 
+    void ClickCooldown()
+    {
+        clickCooldown = false;
+    }
+
+
     public void DamageEnemy()
     {
+        if (clickCooldown) return;
+        clickCooldown = true;
         if (currentBoss) currentBoss.TakeDamage();
         else currentBoss = null;
         if (currentEnemy) currentEnemy.TakeDamage();
         else currentEnemy = null;
+        Invoke(nameof(ClickCooldown), 0.05f);
     }
 
     public void ChangeEnemy()
