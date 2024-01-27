@@ -17,6 +17,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c3a3ced3befa39f4197dbf3e74eb9748, type: 2}
   - {fileID: 11400000, guid: c0edb97aaa154a64cac09a494c4fa6fd, type: 2}
   - {fileID: 11400000, guid: 1759c0ba396b3404dadde7232aeac9e0, type: 2}
-  boss:
-  - {fileID: 11400000, guid: 373d5505e335f8045bf1009b6a5f3c04, type: 2}
+  boss: {fileID: 11400000, guid: 373d5505e335f8045bf1009b6a5f3c04, type: 2}
   zoneSprite: {fileID: 0}

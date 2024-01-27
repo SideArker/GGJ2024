@@ -23,16 +23,16 @@ public class Stat
     /// Removes a value from base value
     /// </summary>
     /// <param name="value">Value to remove</param>
-    public void remBaseValue(float value) 
+    public void remBaseValue(float value)
     {
-        value -= value; 
+        value -= value;
     }
 
     /// <summary>
     /// Adds a value to modifier
     /// </summary>
     /// <param name="modifier">the value to add</param>
-    public void addModifier (float modifier)
+    public void addModifier(float modifier)
     {
         modifier += modifier;
     }
