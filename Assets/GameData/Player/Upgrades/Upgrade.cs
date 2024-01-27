@@ -26,14 +26,19 @@ public class Upgrade
         this.upgradeObject= upgradeObject;
     }
 
+    [Header("Debug")]
+    [ReadOnly] public float scaledDamage;
+    [ReadOnly] public float scaledDPS;
 
     [Header("Main")]
     public string Name;
     public int Level;
+    public float modifier = 1f;
 
     [Header("Cost")]
     public int currentCost;
 
     [Header("Object")]
     [Expandable] public UpgradeObject upgradeObject;
+
 }

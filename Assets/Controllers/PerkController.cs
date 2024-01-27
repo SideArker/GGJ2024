@@ -18,6 +18,18 @@ public class PerkController : MonoBehaviour
 
         player.playerStats.laughs -= result.perkObject.Cost;
 
+        Upgrade upg = player.playerStats.upgrades.Find(x => x.upgradeObject == perkObject.upgradeNeeded);
+        upg.modifier += perkObject.upgradeGainMultiplier;
+
+        player.playerStats.damage.remBaseValue(upg.scaledDamage);
+        player.playerStats.damagePerSecond.remBaseValue(upg.scaledDPS);
+
+        upg.scaledDamage = upg.Level * upg.upgradeObject.damage * upg.modifier;
+        upg.scaledDPS = upg.Level * upg.upgradeObject.dps * upg.modifier;
+
+        player.playerStats.damage.addBaseValue(upg.scaledDamage);
+        player.playerStats.damagePerSecond.addBaseValue(upg. scaledDPS);
+
         player.playerStats.damage.addModifier(result.perkObject.damageMultiplier);
         player.playerStats.damagePerSecond.addModifier(result.perkObject.dpsMultiplier);
     }
