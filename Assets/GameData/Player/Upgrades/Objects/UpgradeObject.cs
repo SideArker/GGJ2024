@@ -5,6 +5,7 @@ using UnityEngine;
 public class UpgradeObject : ScriptableObject
 {
     [Header("Main")]
+    public UpgradeType upgradeType;
     public string perkName;
 
     [Header("Stats")]

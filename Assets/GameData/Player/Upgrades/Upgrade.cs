@@ -1,7 +1,21 @@
 using NaughtyAttributes;
 using UnityEngine;
 
+
+public enum UpgradeType
+{
+    Costume,
+    Jokes,
+    SoundEffects,
+    SlipFall,
+    Pranks,
+    Tickle,
+    Potion,
+    BrainChip
+}
+
 [System.Serializable]
+
 public class Upgrade
 {
     public Upgrade(string Name, int Level, int currentCost, UpgradeObject upgradeObject)

@@ -6,7 +6,6 @@ using UnityEngine;
 public class Stat
 {
     [SerializeField] float baseValue;
-    [ReadOnly] float modValue;
     [Tooltip("multiplier 2x = double the base value")]
     [SerializeField] float modifier = 1f;
 
@@ -34,7 +33,7 @@ public class Stat
     /// <param name="modifier">the value to add</param>
     public void addModifier(float modifier)
     {
-        modValue += modifier;
+        this.modifier += modifier;
     }
 
     /// <summary>
@@ -43,7 +42,7 @@ public class Stat
     /// <param name="modifier">the value to remove</param>
     public void remModifier(float modifier)
     {
-        modValue -= modifier;
+        this.modifier -= modifier;
     }
 
     /// <summary>

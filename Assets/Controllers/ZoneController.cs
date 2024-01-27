@@ -78,7 +78,7 @@ public class ZoneController : MonoBehaviour
             Enemy enemy = Instantiate(enemyPrefab);
             int randomEnemy = UnityEngine.Random.Range(0, currentZone.enemies.Count - 1);
             enemy.SetEnemyObject(currentZone.enemies[randomEnemy]);
-            enemy.SetStats(player.playerStats.currentDifficulty, player.playerStats.currentStage);
+            enemy.SetStats(player.playerStats.currentDifficulty, player.playerStats.currentStage);  
             currentEnemy = enemy;
         }
     }
