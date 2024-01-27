@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 775009988}
   - component: {fileID: 775009991}
   - component: {fileID: 775009992}
+  - component: {fileID: 775009993}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -156,15 +157,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage:
-    baseValue: 1
+    baseValue: 25
     modifier: 1
   damagePerSecond:
     baseValue: 0
     modifier: 1
-  laughs: 0
+  laughs: 1000
   prestigePoints: 0
   prestigePointMultiplier: 0
-  currentStage: 0
+  currentStage: 1
+  highestStage: 1
   currentZone: {fileID: 11400000, guid: 35599ec3df2f46a43af1881f5acc0b1c, type: 2}
   upgrades: []
   perks: []
@@ -213,7 +215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d447fd6864173d34396e84a7679860fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficultyIncrease: 0.1
 --- !u!114 &775009992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,8 +227,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f676aa5db98aa5b44949d47e8b844ee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoneHierarchy: {fileID: 11400000, guid: db88cf816dbeaa344a9a997b1c331767, type: 2}
   enemyPrefab: {fileID: 7295657020457909610, guid: 0de30650827461f45931a78fecb54f80, type: 3}
   bossPrefab: {fileID: 2295012041329199793, guid: 9fcc99e06c94eb045b4f598638ad134a, type: 3}
+--- !u!114 &775009993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775009987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50fefa66a72993a448ebc83ff7dd4e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1073526474
 GameObject:
   m_ObjectHideFlags: 0
