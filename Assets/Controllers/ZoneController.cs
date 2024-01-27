@@ -93,6 +93,10 @@ public class ZoneController : MonoBehaviour
             currentEnemy = enemy;
         }
     }
+    public void SwitchAutoNextStage()
+    {
+        autoNextStage = !autoNextStage;
+    }
     public void AutoNextStage()
     {
         if (autoNextStage) NextStage();
