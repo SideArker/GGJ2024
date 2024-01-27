@@ -1,12 +1,20 @@
 using NaughtyAttributes;
+using System;
 using UnityEngine;
 
 public class ZoneController : MonoBehaviour
 {
     public static ZoneController instance;
-    Player player;
+
+    [Header("Hierarchy")]
+    [SerializeField] ZoneHierarchy zoneHierarchy;
+
+    [Header("Prefabs")]
     [SerializeField] Enemy enemyPrefab;
     [SerializeField] Boss bossPrefab;
+
+    Player player;
+
     Enemy currentEnemy;
     Boss currentBoss;
 
@@ -22,14 +30,21 @@ public class ZoneController : MonoBehaviour
 
         // On zone start
         Enemy enemy = Instantiate(enemyPrefab);
-        int randomEnemy = Random.Range(0, currentZone.enemies.Count - 1);
+        int randomEnemy = UnityEngine.Random.Range(0, currentZone.enemies.Count - 1);
         enemy.SetEnemyObject(currentZone.enemies[randomEnemy]);
         currentEnemy = enemy;
     }
 
     public void ChangeZone()
     {
-        float zoneIndex = player.playerStats.currentStage / 10;
+        int zoneIndex = Array.IndexOf(zoneHierarchy.Zones, player.playerStats.currentZone) + 1;
+        if(zoneIndex > zoneHierarchy.Zones.Length - 1)
+        {
+            zoneIndex = 0;
+        }
+
+        player.playerStats.currentZone = zoneHierarchy.Zones[zoneIndex];
+        ChangeEnemy();
     }
 
     public void DamageEnemy()
@@ -54,7 +69,7 @@ public class ZoneController : MonoBehaviour
         else
         {
             Enemy enemy = Instantiate(enemyPrefab);
-            int randomEnemy = Random.Range(0, currentZone.enemies.Count - 1);
+            int randomEnemy = UnityEngine.Random.Range(0, currentZone.enemies.Count - 1);
             enemy.SetEnemyObject(currentZone.enemies[randomEnemy]);
             currentEnemy = enemy;
         }

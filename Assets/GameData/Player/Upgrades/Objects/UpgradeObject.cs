@@ -12,7 +12,7 @@ public class UpgradeObject : ScriptableObject
     public float dps;
 
     [Header("Cost")]
-    public float baseCost;
+    public int baseCost;
     [Tooltip("Increase per level ex: 0.5 will be a 50% increase per level")]
     public float multiPerLevel;
 

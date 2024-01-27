@@ -13,7 +13,7 @@ public class Boss : MonoBehaviour
     BossObject bossObject;
 
     bool runTick = false;
-
+    Timer timer = new Timer();
 
     public void SetBossObject(BossObject bossObject)
     {
@@ -25,8 +25,8 @@ public class Boss : MonoBehaviour
         runTick = true;
         while (currentHealth > 0)
         {
-            yield return new WaitForSeconds(1);
             currentHealth -= player.playerStats.damagePerSecond.getModValue();
+            yield return new WaitForSeconds(1);
         }
 
     }
@@ -42,7 +42,8 @@ public class Boss : MonoBehaviour
         {
             Debug.Log("Boss dead");
             player.playerStats.laughs += bossObject.LaughsDropped;
-            ZoneController.instance.ChangeEnemy();
+            ZoneController.instance.ChangeZone();
+            timer.Stop();
             Destroy(gameObject);
         }
         if (!runTick) StartCoroutine(TickDamage());
@@ -61,7 +62,6 @@ public class Boss : MonoBehaviour
 
         currentHealth = bossObject.baseHealth;
 
-        Timer timer = new Timer();
         timer.Elapsed += new ElapsedEventHandler(ResetBoss);
         timer.Interval = bossObject.regenTime * 1000;
         timer.Start();
