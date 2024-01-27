@@ -7,11 +7,11 @@ public class Boss : MonoBehaviour
     Player player;
 
     [Header("Stats")]
-    float currentHealth;
+    public float currentHealth;
     float laughAward;
 
     [Header("Other")]
-    BossObject bossObject;
+    public BossObject bossObject;
 
     bool runTick = false;
     Timer timer = new Timer();
@@ -50,6 +50,7 @@ public class Boss : MonoBehaviour
         if (currentHealth <= 0)
         {
             Debug.Log("Boss dead");
+            ZoneController.instance.isEnemyAlive = false;
             player.playerStats.laughs += laughAward;
             ZoneController.instance.ChangeZone();
             timer.Stop();
@@ -61,7 +62,7 @@ public class Boss : MonoBehaviour
 
     void ResetBoss(object source, ElapsedEventArgs e)
     {
-        Debug.Log("Regen boss");
+        //Debug.Log("Regen boss");
         currentHealth = bossObject.baseHealth;
     }
 

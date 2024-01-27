@@ -25,6 +25,7 @@ public class ZoneController : MonoBehaviour
 
     Enemy currentEnemy;
     Boss currentBoss;
+    public bool isEnemyAlive = true;
 
     bool clickCooldown = false;
 
@@ -38,7 +39,8 @@ public class ZoneController : MonoBehaviour
         player = Player.Instance;
         ZoneObject currentZone = player.playerStats.currentZone;
 
-        // On zone start
+        // On zone startv
+        isEnemyAlive = true;
         Enemy enemy = Instantiate(enemyPrefab, spawnPos);
         int randomEnemy = UnityEngine.Random.Range(0, currentZone.enemies.Count - 1);
         enemy.SetEnemyObject(currentZone.enemies[randomEnemy]);
@@ -85,6 +87,7 @@ public class ZoneController : MonoBehaviour
         }
 
         ZoneObject currentZone = player.playerStats.currentZone;
+        isEnemyAlive = true;
         if (player.playerStats.currentStage % 10 == 0)
         {
             Debug.Log("Spawn boss");
@@ -120,9 +123,12 @@ public class ZoneController : MonoBehaviour
     }
     public void NextStage()
     {
-        player.playerStats.currentStage++;
-        player.playerStats.currentDifficulty = player.playerStats.currentStage * .2f + 1;
-        ChangeEnemy();
+        if(!isEnemyAlive)
+        {
+            player.playerStats.currentStage++;
+            player.playerStats.currentDifficulty = player.playerStats.currentStage * .2f + 1;
+            ChangeEnemy();
+        }
     }
     public void PreviousStage()
     {
