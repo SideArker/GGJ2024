@@ -13,7 +13,8 @@ public class PlayerStats : MonoBehaviour
     public float prestigePointMultiplier;
 
     [Header("Zone")]
-    public float currentStage = 1;
+    public int currentStage = 1;
+    public int highestStage = 1;
     public ZoneObject currentZone;
 
     [Header("Upgrades")]

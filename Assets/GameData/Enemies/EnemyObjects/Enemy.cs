@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
 
     [Header("Stats")]
     float currentHealth;
+    float laughAward;
 
     [Header("Other")]
     EnemyObject enemyObject;
@@ -41,7 +42,7 @@ public class Enemy : MonoBehaviour
         if (currentHealth <= 0)
         {
             Debug.Log("Enemy dead");
-            player.playerStats.laughs += enemyObject.LaughsDropped;
+            player.playerStats.laughs += laughAward;
             ZoneController.instance.ChangeEnemy();
             Destroy(gameObject);
         }
@@ -49,10 +50,18 @@ public class Enemy : MonoBehaviour
         
     }
 
+    public void SetStats(float difficulty, int stage)
+    {
+        currentHealth = enemyObject.baseHealth + difficulty * stage * enemyObject.difficultyScaling * 1.75f;
+        laughAward = enemyObject.LaughsDropped + difficulty * stage * enemyObject.difficultyScaling * 1.5f;
+        Debug.Log(currentHealth);
+    }
+
     void Start()
     {
         player = Player.Instance;
 
         currentHealth = enemyObject.baseHealth;
+        laughAward = enemyObject.LaughsDropped;
     }
 }

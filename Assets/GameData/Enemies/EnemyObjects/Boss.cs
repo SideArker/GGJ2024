@@ -8,6 +8,7 @@ public class Boss : MonoBehaviour
 
     [Header("Stats")]
     float currentHealth;
+    float laughAward;
 
     [Header("Other")]
     BossObject bossObject;
@@ -31,6 +32,14 @@ public class Boss : MonoBehaviour
 
     }
 
+    public void SetStats(float difficulty, int stage)
+    {
+        currentHealth = bossObject.baseHealth + difficulty * stage * bossObject.difficultyScaling * 1.35f;
+        laughAward = bossObject.LaughsDropped + difficulty * stage * bossObject.difficultyScaling * 1.25f;
+        Debug.Log(currentHealth);
+    }
+
+
     public void TakeDamage()
     {
         currentHealth -= player.playerStats.damage.getModValue();
@@ -41,7 +50,7 @@ public class Boss : MonoBehaviour
         if (currentHealth <= 0)
         {
             Debug.Log("Boss dead");
-            player.playerStats.laughs += bossObject.LaughsDropped;
+            player.playerStats.laughs += laughAward;
             ZoneController.instance.ChangeZone();
             timer.Stop();
             Destroy(gameObject);
@@ -61,6 +70,7 @@ public class Boss : MonoBehaviour
         player = Player.Instance;
 
         currentHealth = bossObject.baseHealth;
+        laughAward = bossObject.LaughsDropped;
 
         timer.Elapsed += new ElapsedEventHandler(ResetBoss);
         timer.Interval = bossObject.regenTime * 1000;
