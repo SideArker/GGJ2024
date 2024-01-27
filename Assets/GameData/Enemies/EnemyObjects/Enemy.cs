@@ -7,11 +7,11 @@ public class Enemy : MonoBehaviour
     Player player;
 
     [Header("Stats")]
-    float currentHealth;
+    public float currentHealth;
     float laughAward;
 
     [Header("Other")]
-    EnemyObject enemyObject;
+    [HideInInspector] public EnemyObject enemyObject;
 
     bool runTick = false;
 
@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             currentHealth -= player.playerStats.damagePerSecond.getModValue();
-            Debug.Log("Damage dealt: " + player.playerStats.damagePerSecond.getModValue());
+            //Debug.Log("Damage dealt: " + player.playerStats.damagePerSecond.getModValue());
         }
 
     }

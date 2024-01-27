@@ -10944,8 +10944,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b510569c6b1c324cb6d57fb3215181d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  header: sex
-  content: "z krzysztofem kr\xF3wk\u0105"
+  header: "krzysztof kr\xF3wka"
+  content: to chuj
 --- !u!1 &1927939136
 GameObject:
   m_ObjectHideFlags: 0

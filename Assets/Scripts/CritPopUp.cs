@@ -11,6 +11,7 @@ public class CritPopUp : MonoBehaviour
     bool isWaiting = false;
     [SerializeField] Transform popUp;
     [SerializeField] Vector2[] posRange;
+    [SerializeField] float onScreenTime;
     private void Start()
     {
 
@@ -25,6 +26,8 @@ public class CritPopUp : MonoBehaviour
         yield return new WaitForSeconds(tickTime);
         if (Random.Range(1, 1000) < CritChance * 10)
             ShowPopUp();
+        yield return new WaitForSeconds(onScreenTime);
+        popUp.gameObject.SetActive(false);
         isWaiting = false;
     }
     [Button]
@@ -37,6 +40,8 @@ public class CritPopUp : MonoBehaviour
     public void Click()
     {
         popUp.gameObject.SetActive(false);
+        isWaiting = false;
+        StopCoroutine(Cycle());
         //rest of code :D
         print("clicked");
     }

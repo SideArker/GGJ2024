@@ -16,3 +16,9 @@ MonoBehaviour:
   LaughsDropped: 1000
   regenTime: 5
   difficultyScaling: 2
+  normalSprites:
+  - {fileID: 21300000, guid: c7a84acbfcee8514fbeaa38b8ed6eb04, type: 3}
+  - {fileID: 21300000, guid: bad430516cb3d684daa9a39dae0eeccc, type: 3}
+  laughingSprites:
+  - {fileID: 21300000, guid: 06d60187526a4494b99114191b761092, type: 3}
+  - {fileID: 21300000, guid: 448a2851965beac4ca2edeee91b6a816, type: 3}
