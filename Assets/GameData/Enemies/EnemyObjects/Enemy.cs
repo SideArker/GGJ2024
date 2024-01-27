@@ -1,9 +1,8 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [System.Serializable]
-public class Enemy
+public class Enemy : MonoBehaviour
 {
     Player player;
 
@@ -12,38 +11,48 @@ public class Enemy
 
     [Header("Other")]
     EnemyObject enemyObject;
-    ZoneObject currentZone;
 
+    bool runTick = false;
+
+
+    public void SetEnemyObject(EnemyObject enemyObject)
+    {
+        this.enemyObject = enemyObject;
+    }
 
     IEnumerator TickDamage()
     {
-        while(currentHealth > 0)
+        runTick = true;
+        while (currentHealth > 0)
         {
             yield return new WaitForSeconds(1);
             currentHealth -= player.playerStats.damagePerSecond.getModValue();
         }
 
     }
-    
-    void changeEnemy()
+
+    public void TakeDamage()
     {
-        player.playerStats.laughs += enemyObject.LaughsDropped;
-
-
+        currentHealth -= player.playerStats.damage.getModValue();
     }
 
     void Update()
     {
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Debug.Log("Enemy dead");
-
+            player.playerStats.laughs += enemyObject.LaughsDropped;
+            ZoneController.instance.ChangeEnemy();
+            Destroy(gameObject);
         }
+        if(!runTick) StartCoroutine(TickDamage());
+        
     }
 
     void Start()
     {
         player = Player.Instance;
-        currentZone = player.playerStats.currentZone;
+
+        currentHealth = enemyObject.baseHealth;
     }
 }
