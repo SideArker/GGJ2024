@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    
     public string header;
     public string content;
     
