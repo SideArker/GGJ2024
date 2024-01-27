@@ -110,6 +110,11 @@ MonoBehaviour:
   zoneHierarchy: {fileID: 11400000, guid: db88cf816dbeaa344a9a997b1c331767, type: 2}
   enemyPrefab: {fileID: 7295657020457909610, guid: 0de30650827461f45931a78fecb54f80, type: 3}
   bossPrefab: {fileID: 2295012041329199793, guid: 9fcc99e06c94eb045b4f598638ad134a, type: 3}
+  pauseBtnSprites:
+  - {fileID: 21300000, guid: 4f48b60ab28a12d46b354e42f7f25e46, type: 3}
+  - {fileID: 21300000, guid: 016915dc808e7ac42857aebd729916ae, type: 3}
+  spawnPos: {fileID: 0}
+  isEnemyAlive: 1
 --- !u!114 &44626147294933037
 MonoBehaviour:
   m_ObjectHideFlags: 0
