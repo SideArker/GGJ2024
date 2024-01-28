@@ -30,8 +30,19 @@ public class Boss : MonoBehaviour
             yield return new WaitForSeconds(1);
             currentHealth -= player.playerStats.damagePerSecond.getModValue();
             Player.Instance.SetFunmeter(1 - (currentHealth / baseHealth));
+            Debug.Log("a");
         }
 
+    }
+
+    IEnumerator BossRegen()
+    {
+        while(currentHealth > 0)
+        {
+            yield return new WaitForSeconds(bossObject.regenTime);
+            currentHealth = baseHealth;
+            Debug.Log(baseHealth);
+        }
     }
 
     public void SetStats(float difficulty, int stage)
@@ -65,14 +76,13 @@ public class Boss : MonoBehaviour
             timer.Stop();
             Destroy(gameObject);
         }
-        if (!runTick) StartCoroutine(TickDamage());
+        if (!runTick)
+        {
+            StartCoroutine(TickDamage());
+            StartCoroutine(BossRegen());
+        }
 
-    }
 
-    void ResetBoss(object source, ElapsedEventArgs e)
-    {
-        //Debug.Log("Regen boss");
-        currentHealth = bossObject.baseHealth;
     }
 
     void Start()
@@ -84,8 +94,5 @@ public class Boss : MonoBehaviour
             currentHealth = bossObject.baseHealth;
             laughAward = bossObject.LaughsDropped;
         }
-        timer.Elapsed += new ElapsedEventHandler(ResetBoss);
-        timer.Interval = bossObject.regenTime * 1000;
-        timer.Start();
     }
 }
