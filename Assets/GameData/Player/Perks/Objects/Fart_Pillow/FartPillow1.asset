@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e9e557bc394bd4996b34ff3f42ca07, type: 3}
   m_Name: FartPillow1
   m_EditorClassIdentifier: 
-  perkName: Fart Pillow
-  perkDescription: 
+  perkName: Basic Funny Items
+  perkDescription: Increase fun gained from Pranks by 100%
   upgradeType: 4
   upgradeNeeded: {fileID: 11400000, guid: 76f148443b8a8ff428e5d9ead38ddd50, type: 2}
   amountNeeded: 10

@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e9e557bc394bd4996b34ff3f42ca07, type: 3}
   m_Name: JokeBook3
   m_EditorClassIdentifier: 
-  perkName: Joke book
-  perkDescription: 
+  perkName: Top-Tier Jokes
+  perkDescription: Increase Jokes fun gain by 200%
   upgradeType: 1
   upgradeNeeded: {fileID: 11400000, guid: 8a3e77ab607a27e4bbf3d0b4f8b16dec, type: 2}
   amountNeeded: 50
-  upgradeGainMultiplier: 2
+  upgradeGainMultiplier: 5
   damageMultiplier: 0
   dpsMultiplier: 0
   Cost: 0

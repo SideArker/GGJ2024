@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e9e557bc394bd4996b34ff3f42ca07, type: 3}
   m_Name: Bracelet4
   m_EditorClassIdentifier: 
-  perkName: Bracelet
-  perkDescription: 
+  perkName: Amazing Skills
+  perkDescription: Increase fun from tickling by 500%
   upgradeType: 5
   upgradeNeeded: {fileID: 11400000, guid: c5a436cda82b4a04780e9ef4ab3e25f2, type: 2}
   amountNeeded: 100

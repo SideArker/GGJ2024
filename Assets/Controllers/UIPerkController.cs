@@ -14,7 +14,8 @@ public class UIPerkController : MonoBehaviour
         perkClone.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(perkObject, perkClone));
         TooltipTrigger tooltipTrigger = perkClone.GetComponent<TooltipTrigger>();
         tooltipTrigger.header = perkObject.perkName;
-        tooltipTrigger.content = $"DESCRIPTION: {perkObject.perkDescription}\n{perkObject.Cost}$";
+        tooltipTrigger.content = perkObject.perkDescription;
+        tooltipTrigger.special = perkObject.Cost + " Laughs";
         perkClone.SetActive(true);
     }
 

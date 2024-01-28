@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e9e557bc394bd4996b34ff3f42ca07, type: 3}
   m_Name: Hoink4
   m_EditorClassIdentifier: 
-  perkName: Hoink
-  perkDescription: 
+  perkName: Amazing Equipment
+  perkDescription: Increase click fun by 500%
   upgradeType: 0
   upgradeNeeded: {fileID: 11400000, guid: a6eb8390e14f1a947ac62fc2d25791a9, type: 2}
   amountNeeded: 100

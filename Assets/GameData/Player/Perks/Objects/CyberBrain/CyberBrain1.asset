@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e9e557bc394bd4996b34ff3f42ca07, type: 3}
   m_Name: CyberBrain1
   m_EditorClassIdentifier: 
-  perkName: Cyber Brain
-  perkDescription: 
+  perkName: Basic Connection
+  perkDescription: Increase fun from Brain Chips by 100%
   upgradeType: 7
   upgradeNeeded: {fileID: 11400000, guid: 7ec29666699473249b91065c3c2a9213, type: 2}
   amountNeeded: 10

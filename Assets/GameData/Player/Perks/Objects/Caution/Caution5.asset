@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e9e557bc394bd4996b34ff3f42ca07, type: 3}
   m_Name: Caution5
   m_EditorClassIdentifier: 
-  perkName: Caution Sign
-  perkDescription: 
+  perkName: Fenomenal Comedic Timing
+  perkDescription: Increase fun gained from slipping by 1000%
   upgradeType: 3
   upgradeNeeded: {fileID: 11400000, guid: c629ffa27dc0a454a9cf51f7fd77d386, type: 2}
   amountNeeded: 250

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e9e557bc394bd4996b34ff3f42ca07, type: 3}
   m_Name: JokeBook5
   m_EditorClassIdentifier: 
-  perkName: Joke book
-  perkDescription: 
+  perkName: Fenomenal Jokes
+  perkDescription: Increase Jokes fun gain by 2500%
   upgradeType: 1
   upgradeNeeded: {fileID: 11400000, guid: 8a3e77ab607a27e4bbf3d0b4f8b16dec, type: 2}
   amountNeeded: 250
