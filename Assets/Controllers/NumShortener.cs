@@ -32,6 +32,7 @@ public class NumShortener : MonoBehaviour
                 }
                 output += $"{item.Value}+";
             }
+            if (num < 1000) output = Math.Round(num, 1).ToString();
         }
 
         if(output == "") output = num.ToString();
