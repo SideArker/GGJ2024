@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e727eea8298e27e4aa4285cba404fb89, type: 3}
-  m_Name: FunPerSecond 4
+  m_Name: Ascension
   m_EditorClassIdentifier: 
-  perkName: FUN PER SECOND UPGRADE
-  perkDescription: INCREASE ALL UPGRADES POWER BY 5%
-  overallMultiplier: 5
+  perkName: Ascension
+  perkDescription: You have ascended...  <color=#00FF00> +50% all FPS <color>
+  overallMultiplier: 0.5
   clickPowerMultiplier: 0
   ppGainMultiplier: 0
-  cost: 0
-  sprite: {fileID: 0}
+  cost: 1
+  sprite: {fileID: 21300000, guid: 35c0165356cc96f45ba03f0885b77e7b, type: 3}

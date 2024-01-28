@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e727eea8298e27e4aa4285cba404fb89, type: 3}
-  m_Name: Test
+  m_Name: BetterEffects
   m_EditorClassIdentifier: 
-  perkName: Test
-  perkDescription: HejHej
-  overallMultiplier: 0
+  perkName: Better SFX
+  perkDescription: You have better sound effects.  <color=#00FF00> +200% DPS </color>
+  overallMultiplier: 2
   clickPowerMultiplier: 0
   ppGainMultiplier: 0
-  cost: 5
-  sprite: {fileID: 21300000, guid: 35c0165356cc96f45ba03f0885b77e7b, type: 3}
+  cost: 25
+  sprite: {fileID: 21300000, guid: 619a381943f49524d8ca7988df123d01, type: 3}

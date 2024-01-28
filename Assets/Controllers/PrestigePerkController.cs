@@ -16,5 +16,9 @@ public class PrestigePerkController : MonoBehaviour
         player.playerStats.prestigePerks.Add(result);
 
         player.playerStats.prestigePoints -= result.perkObject.cost;
+
+        player.playerStats.damage.addModifier(result.perkObject.clickPowerMultiplier);
+        player.playerStats.damagePerSecond.addModifier(result.perkObject.overallMultiplier);
+        player.playerStats.prestigePointMultiplier += result.perkObject.ppGainMultiplier;
     }
 }
