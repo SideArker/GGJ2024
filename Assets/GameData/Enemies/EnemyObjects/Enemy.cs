@@ -54,7 +54,7 @@ public class Enemy : MonoBehaviour
             ZoneController.instance.isEnemyAlive = false;
             player.playerStats.laughs += laughAward;
             Player.Instance.SetLaughs();
-            ZoneController.instance.AutoNextStage();
+            ZoneController.instance.ChangeEnemy();
             Destroy(gameObject);
         }
         if(!runTick) StartCoroutine(TickDamage());

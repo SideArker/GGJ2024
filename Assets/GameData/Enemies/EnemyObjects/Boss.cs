@@ -72,8 +72,8 @@ public class Boss : MonoBehaviour
             ZoneController.instance.isEnemyAlive = false;
             player.playerStats.laughs += laughAward;
             Player.Instance.SetLaughs();
-            ZoneController.instance.ChangeZone();
             timer.Stop();
+            ZoneController.instance.ChangeEnemy();
             Destroy(gameObject);
         }
         if (!runTick)

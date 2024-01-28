@@ -52,18 +52,17 @@ public class ZoneController : MonoBehaviour
         currentEnemy = enemy;
     }
 
-    public void ChangeZone()
-    {
-        int zoneIndex = Array.IndexOf(zoneHierarchy.Zones, player.playerStats.currentZone) + 1;
-        if (zoneIndex > zoneHierarchy.Zones.Length - 1)
-        {
-            zoneIndex = 0;
-        }
+    //public void ChangeZone()
+    //{
+    //    int zoneIndex = Array.IndexOf(zoneHierarchy.Zones, player.playerStats.currentZone) + 1;
+    //    if (zoneIndex > zoneHierarchy.Zones.Length - 1)
+    //    {
+    //        zoneIndex = 0;
+    //    }
 
-        player.playerStats.currentZone = zoneHierarchy.Zones[zoneIndex];
-        AutoNextStage();
-        //ChangeEnemy();
-    }
+    //    player.playerStats.currentZone = zoneHierarchy.Zones[zoneIndex];
+    //    //ChangeEnemy();
+    //}
 
     void ClickCooldown()
     {
@@ -87,13 +86,10 @@ public class ZoneController : MonoBehaviour
 
     public void ChangeEnemy()
     {
+
         Player.Instance.SetFunmeter(0);
 
-        if (player.playerStats.highestStage < player.playerStats.currentStage)
-        {
-            player.playerStats.highestStage = player.playerStats.currentStage;
-        }
-
+        Player.Instance.playerStats.currentStage++;
         ZoneObject currentZone = player.playerStats.currentZone;
         isEnemyAlive = true;
         if (player.playerStats.currentStage % 10 == 0)
@@ -113,6 +109,9 @@ public class ZoneController : MonoBehaviour
             currentEnemy = enemy;
             //print(currentEnemy.currentHealth);
         }
+        stageText.text = "Stage: " + player.playerStats.currentStage;
+        player.playerStats.currentDifficulty = player.playerStats.currentStage * .2f + 1;
+
     }
     public void SwitchAutoNextStage(Image img)
     {
@@ -127,40 +126,24 @@ public class ZoneController : MonoBehaviour
             img.sprite = pauseBtnSprites[1];
         }
     }
-    public void AutoNextStage()
-    {
-        if (autoNextStage) NextStage();
-    }
-    public void NextStage()
-    {
-        if (!isEnemyAlive)
-        {
-            player.playerStats.currentStage++;
-            stageText.text = "Stage: " + player.playerStats.currentStage;
-            player.playerStats.currentDifficulty = player.playerStats.currentStage * .2f + 1;
-            ChangeEnemy();
-        }
-    }
+
     public void PreviousStage()
     {
-        if (player.playerStats.currentStage > 1)
-        {
-            isEnemyAlive = false;
-            try
-            {
-                Destroy(currentEnemy.gameObject);
-                print("fucking shit");
-            }
-            catch
-            {
-                try
-                {
-                    Destroy(currentBoss.gameObject);
-                }
-                catch { }
-            }
+     
 
-            player.playerStats.currentStage--;
+        if (Player.Instance.playerStats.currentStage > 1)
+        {
+
+            Player.Instance.playerStats.currentStage--;
+            Player.Instance.playerStats.currentStage--;
+
+            isEnemyAlive = false;
+
+            if(currentEnemy) Destroy(currentEnemy.gameObject);
+            if(currentBoss) Destroy(currentBoss.gameObject);
+            currentBoss = null;
+            currentEnemy = null;
+
             stageText.text = "Stage: " + player.playerStats.currentStage;
 
             player.playerStats.currentDifficulty = player.playerStats.currentStage * .2f + 1;
