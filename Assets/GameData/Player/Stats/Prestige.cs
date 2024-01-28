@@ -23,6 +23,8 @@ public class Prestige : MonoBehaviour
 
         playerStats.prestigePoints += prestigePoints;
         UIController.Instance.UpdateEntries();
+
+        Player.Instance.GetComponent<PerkUnlocker>().unlockedPerks.Clear();
     }
 
 }
