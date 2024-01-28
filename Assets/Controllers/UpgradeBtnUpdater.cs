@@ -15,7 +15,7 @@ public class UpgradeBtnUpdater : MonoBehaviour
         TooltipTrigger tooltipTrigger = GetComponent<TooltipTrigger>();
         if(result != null)
         {
-            CostText.GetComponent<TMP_Text>().text = result.currentCost.ToString();
+            CostText.GetComponent<TMP_Text>().text = NumShortener.Shorten(result.currentCost);
             UpgradeAmount.GetComponent<TMP_Text>().text = result.Level.ToString();
             tooltipTrigger.header = result.Name;
 
@@ -31,7 +31,7 @@ public class UpgradeBtnUpdater : MonoBehaviour
         }
         else
         {
-            CostText.GetComponent<TMP_Text>().text = defaultObject.baseCost.ToString();
+            CostText.GetComponent<TMP_Text>().text = NumShortener.Shorten(defaultObject.baseCost);
             UpgradeAmount.GetComponent<TMP_Text>().text = "0";
 
             tooltipTrigger.header = defaultObject.upgradeName;
