@@ -10,6 +10,7 @@ public class Tooltip : MonoBehaviour
     [SerializeField] TextMeshProUGUI headerField;
 
     [SerializeField] TextMeshProUGUI contentField;
+    [SerializeField] TextMeshProUGUI specialTextField;
 
     [SerializeField] LayoutElement layoutElement;
 
@@ -24,7 +25,7 @@ public class Tooltip : MonoBehaviour
         rectTransform = GetComponent<RectTransform>(); 
     }
 
-    public void SetText(string content, string header = "")
+    public void SetText(string content, string header = "", string specialText = "")
     {
         if (string.IsNullOrEmpty(header))
         {
@@ -36,6 +37,16 @@ public class Tooltip : MonoBehaviour
             headerField.text = header;
         }
 
+        if (string.IsNullOrEmpty(specialText))
+        {
+            specialTextField.gameObject.SetActive(false);
+        }
+        else
+        {
+            specialTextField.gameObject.SetActive(true);
+            specialTextField.text = specialText;
+        }
+
         int headerLength = headerField.text.Length;
         int contentLength = contentField.text.Length;
 
@@ -45,11 +56,14 @@ public class Tooltip : MonoBehaviour
         contentField.text = content;
     }
 
-    //CanvasScaler scaler = GetComponentInParent<CanvasScaler>();
-    //hoverTip.transform.position = new Vector2(Input.mousePosition.x * scaler.referenceResolution.x / Screen.width * 1.225f, Input.mousePosition.y * scaler.referenceResolution.y / Screen.height);
-
     void Update()
     {
-        transform.position = new Vector3(Input.mousePosition.x * 1.20f, Input.mousePosition.y, Input.mousePosition.z);
+
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = -Camera.main.transform.position.z;
+
+        Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
+
+        transform.position = worldPos + Vector3.right * 0.5f;
     }
 }

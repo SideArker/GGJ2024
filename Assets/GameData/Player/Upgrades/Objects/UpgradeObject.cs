@@ -7,6 +7,7 @@ public class UpgradeObject : ScriptableObject
     [Header("Main")]
     public UpgradeType upgradeType;
     public string upgradeName;
+    public string description;
 
     [Header("Stats")]
     public float damage;
