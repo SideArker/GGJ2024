@@ -41,15 +41,15 @@ public class EnemiesSpriteController : MonoBehaviour
         isAnimate = true;
         if(enemy)
         {
-            image.sprite = (enemyObject.baseHealth / enemy.currentHealth >= 1.25f) ? enemyObject.laughingSprites[0] : enemyObject.normalSprites[0];
+            image.sprite = (enemyObject.baseHealth / enemy.currentHealth >= 3f) ? enemyObject.laughingSprites[0] : enemyObject.normalSprites[0];
             yield return new WaitForSeconds(animTimeDelay);
-            image.sprite = (enemyObject.baseHealth / enemy.currentHealth >= 1.25f) ? enemyObject.laughingSprites[1] : enemyObject.normalSprites[1];
+            image.sprite = (enemyObject.baseHealth / enemy.currentHealth >= 3f) ? enemyObject.laughingSprites[1] : enemyObject.normalSprites[1];
         }
         else
         {
-            image.sprite = (bossObject.baseHealth / boss.currentHealth >= 1.25f) ? bossObject.laughingSprites[0] : bossObject.normalSprites[0];
+            image.sprite = (bossObject.baseHealth / boss.currentHealth >= 3f) ? bossObject.laughingSprites[0] : bossObject.normalSprites[0];
             yield return new WaitForSeconds(animTimeDelay);
-            image.sprite = (bossObject.baseHealth / boss.currentHealth >= 1.25f) ? bossObject.laughingSprites[1] : bossObject.normalSprites[1];
+            image.sprite = (bossObject.baseHealth / boss.currentHealth >= 3f) ? bossObject.laughingSprites[1] : bossObject.normalSprites[1];
 
         }
         yield return new WaitForSeconds(animTimeDelay);
