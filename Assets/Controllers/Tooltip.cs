@@ -15,6 +15,7 @@ public class Tooltip : MonoBehaviour
     [SerializeField] LayoutElement layoutElement;
 
     [SerializeField] CanvasScaler scaler;
+
     
     public int characterWrapLimit;
 
@@ -60,14 +61,12 @@ public class Tooltip : MonoBehaviour
     {
 
         Vector3 mousePos = Input.mousePosition;
-        if(Camera.main.isActiveAndEnabled)
-        {
-            mousePos.z = -Camera.main.transform.position.z;
 
-            Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
+            mousePos.z = -UIController.Instance.currentCam.transform.position.z;
+
+            Vector3 worldPos = UIController.Instance.currentCam.ScreenToWorldPoint(mousePos);
 
             transform.position = worldPos + Vector3.right * 0.5f;
-        }
 
     }
 }

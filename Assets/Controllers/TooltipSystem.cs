@@ -7,8 +7,10 @@ using UnityEngine;
 
 public class TooltipSystem : MonoBehaviour
 {
-    private static TooltipSystem instance;
-    
+    public static TooltipSystem instance;
+
+    public Canvas canvasMain;
+    public Canvas canvasPrestige;
     public Tooltip tooltip;
 
     public void Awake()
@@ -16,13 +18,15 @@ public class TooltipSystem : MonoBehaviour
         instance = this;
     }
 
-    public static void Show(string content, string header = "", string special = "")
+    public void Show(string content, string header = "", string special = "")
     {
+        if (UIController.Instance.currentCam == Camera.main) instance.tooltip.transform.SetParent(canvasMain.transform);
+        else instance.tooltip.transform.SetParent(canvasPrestige.transform);
         instance.tooltip.SetText(content, header, special);
         instance.tooltip.gameObject.SetActive(true);
     }
 
-    public static void Hide()
+    public void Hide()
     {
         instance.tooltip.gameObject.SetActive(false);
     }

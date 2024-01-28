@@ -23,7 +23,7 @@ public class UIPerkController : MonoBehaviour
     {
         if (player.playerStats.laughs < perk.Cost) return;
         PerkController.Instance.BuyPerk(perk);
-        TooltipSystem.Hide();
+        TooltipSystem.instance.Hide();
         Destroy(btn);
     }
 

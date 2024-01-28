@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f1561d258b06a74d9b7eed78cc7733b, type: 3}
   m_Name: SlipFall
   m_EditorClassIdentifier: 
-  upgradeType: 2
-  upgradeName: Sound Effects
+  upgradeType: 3
+  upgradeName: Slippery floors
+  description: 
   damage: 0
-  dps: 5
+  dps: 25
   baseCost: 1000
   multiPerLevel: 0.3
   icon: {fileID: 21300000, guid: 94f9d913367649b469d5167271964126, type: 3}
