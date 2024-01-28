@@ -8,9 +8,9 @@ public class PrestigePerkObject : ScriptableObject
     public string perkDescription;
 
     [Header("Stats")]
-    float overallMultiplier;
-    float clickPowerMultiplier;
-    float ppGainMultiplier;
+    public float overallMultiplier;
+    public float clickPowerMultiplier;
+    public float ppGainMultiplier;
 
     [Header("Cost")]
     public float cost;
