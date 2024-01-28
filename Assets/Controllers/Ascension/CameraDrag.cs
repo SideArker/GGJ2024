@@ -10,6 +10,7 @@ public class CameraDrag : MonoBehaviour
     float outerRight = 10f;
     float outerUp = 10f;
     float outerBottom = -10f;
+    [SerializeField] Camera camera;
 
 
     void Update()
@@ -25,6 +26,6 @@ public class CameraDrag : MonoBehaviour
         if (transform.position.y < outerBottom && mouseY > 0) return;
 
 
-        Camera.main.transform.position -= new Vector3(mouseX * dragSpeed, mouseY * dragSpeed, 0);
+        camera.transform.position -= new Vector3(mouseX * dragSpeed, mouseY * dragSpeed, 0);
     }
 }
