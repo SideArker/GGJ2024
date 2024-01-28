@@ -63,9 +63,9 @@ public class Enemy : MonoBehaviour
 
     public void SetStats(float difficulty, int stage)
     {
-        currentHealth = enemyObject.baseHealth + difficulty * stage * enemyObject.difficultyScaling;
+        currentHealth = enemyObject.baseHealth + difficulty * stage * enemyObject.difficultyScaling * ((stage+20)/10);
         baseHealth = currentHealth;
-        laughAward = enemyObject.LaughsDropped + difficulty * stage * enemyObject.difficultyScaling * 1.75f;
+        laughAward = enemyObject.LaughsDropped + difficulty * stage * enemyObject.difficultyScaling * 1.5f;
     }
 
     void Start()

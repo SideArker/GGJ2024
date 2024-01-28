@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   perkName: Better Equipment
   perkDescription: Increase click fun by <color=#00FF00>100%</color>, <color=#FF0000>Doubles
-    crit chance</color
+    crit chance</color>
   upgradeType: 0
   upgradeNeeded: {fileID: 11400000, guid: a6eb8390e14f1a947ac62fc2d25791a9, type: 2}
   amountNeeded: 25
@@ -23,5 +23,5 @@ MonoBehaviour:
   dpsMultiplier: 0
   critChance: 1
   critDamageMultiplier: 0
-  Cost: 500
+  Cost: 1000
   icon: {fileID: 21300000, guid: 82d0393a476e2804a9127868b198dc1e, type: 3}

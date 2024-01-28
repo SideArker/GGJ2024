@@ -36,8 +36,8 @@ public class Boss : MonoBehaviour
 
     public void SetStats(float difficulty, int stage)
     {
-        currentHealth = bossObject.baseHealth + difficulty * stage * bossObject.difficultyScaling;
-        laughAward = bossObject.LaughsDropped + difficulty * stage * bossObject.difficultyScaling * 2.5f;
+        currentHealth = bossObject.baseHealth + difficulty * stage * bossObject.difficultyScaling * ((stage + 20) / 10);
+        laughAward = bossObject.LaughsDropped + difficulty * stage * bossObject.difficultyScaling * 2f;
         baseHealth = currentHealth;
         Debug.Log(currentHealth);
     }

@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 7
   upgradeName: Brain Chip
-  damage: 10
+  description: 
+  damage: 25
   dps: 10000
-  baseCost: 1000000
+  baseCost: 5000000
   multiPerLevel: 0.3
   icon: {fileID: 21300000, guid: 94f9d913367649b469d5167271964126, type: 3}

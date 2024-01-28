@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 1
   upgradeName: Funny Jokes
+  description: 
   damage: 0
   dps: 1
   baseCost: 50

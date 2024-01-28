@@ -23,5 +23,5 @@ MonoBehaviour:
   dpsMultiplier: 0
   critChance: 2
   critDamageMultiplier: 0
-  Cost: 500000
+  Cost: 0
   icon: {fileID: 21300000, guid: a0a31b880f4d39641b44fb3528175a0f, type: 3}

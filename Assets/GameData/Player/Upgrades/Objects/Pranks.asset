@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 4
   upgradeName: Pranks
+  description: 
   damage: 0
-  dps: 150
-  baseCost: 5000
+  dps: 100
+  baseCost: 10000
   multiPerLevel: 0.3
   icon: {fileID: 21300000, guid: 94f9d913367649b469d5167271964126, type: 3}

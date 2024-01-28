@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Hoink3
   m_EditorClassIdentifier: 
   perkName: Top-Tier Equipment
-  perkDescription: Increase click fun by <color=#00FF00>200%</color>, <color=#FF0000>Doubles
+  perkDescription: Increase click fun by <color=#00FF00>400%</color>, <color=#FF0000>Doubles
     crit damage </color>
   upgradeType: 0
   upgradeNeeded: {fileID: 11400000, guid: a6eb8390e14f1a947ac62fc2d25791a9, type: 2}
   amountNeeded: 50
   upgradeGainMultiplier: 0
-  damageMultiplier: 2
+  damageMultiplier: 4
   dpsMultiplier: 0
   critChance: 0
   critDamageMultiplier: 1
-  Cost: 5000
+  Cost: 50000
   icon: {fileID: 21300000, guid: bcea40cede7aa13459f321bedd11ad29, type: 3}

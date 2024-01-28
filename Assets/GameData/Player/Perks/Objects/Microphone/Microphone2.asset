@@ -20,5 +20,7 @@ MonoBehaviour:
   upgradeGainMultiplier: 1
   damageMultiplier: 0
   dpsMultiplier: 0
-  Cost: 0
+  critChance: 0
+  critDamageMultiplier: 0
+  Cost: 500000
   icon: {fileID: 21300000, guid: 412a155773ed8554fb132ef8ce3c0c0a, type: 3}
