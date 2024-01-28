@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180453ec4ecfe6c4685e8bfce6b984e1, type: 3}
+  m_Name: Biroro
+  m_EditorClassIdentifier: 
+  baseHealth: 5
+  LaughsDropped: 5
+  difficultyScaling: 1
+  normalSprites:
+  - {fileID: 21300000, guid: 28e632ffe47709a46af378287b608261, type: 3}
+  - {fileID: 21300000, guid: d924f7f864329444985680bb3d3e2013, type: 3}
+  laughingSprites:
+  - {fileID: 21300000, guid: fb926d00377e63c4ba6ef1e0d2487b3b, type: 3}
+  - {fileID: 21300000, guid: 622fc3bb24bc3f947b64e51f9a6e05a8, type: 3}

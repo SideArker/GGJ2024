@@ -14,4 +14,9 @@ public class BossObject : ScriptableObject
     [Header("Scaling")]
     [Tooltip("Means how hard enemies scale off of current difficulty")]
     public float difficultyScaling;
+
+    [Header("Images")]
+    public Sprite[] normalSprites;
+    public Sprite[] laughingSprites;
+
 }

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e9e557bc394bd4996b34ff3f42ca07, type: 3}
+  m_Name: FartPillow3
+  m_EditorClassIdentifier: 
+  perkName: Top-Tier Funny Items
+  perkDescription: Increase fun gained from Pranks by  <color=#00FF00>200%</color>
+  upgradeType: 4
+  upgradeNeeded: {fileID: 11400000, guid: 76f148443b8a8ff428e5d9ead38ddd50, type: 2}
+  amountNeeded: 50
+  upgradeGainMultiplier: 2
+  damageMultiplier: 0
+  dpsMultiplier: 0
+  Cost: 0
+  icon: {fileID: 21300000, guid: 0f03325c0bf694f4982178cb182a070c, type: 3}

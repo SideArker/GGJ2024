@@ -9,14 +9,22 @@ public class Prestige : MonoBehaviour
     {
         playerStats = Player.Instance.playerStats;
     }
-    [Button]
-    public void Presige()
+    public void OnPrestige(float prestigePoints)
     {
         playerStats.damage.reset();
         playerStats.damagePerSecond.reset();
+        playerStats.critChance.reset();
+        playerStats.critChance.setBaseValue(0);
+        playerStats.critMultiplier.reset();
         playerStats.laughs = 0;
-        playerStats.upgrades = new List<Upgrade>();
-        playerStats.perks = new List<Perk>();
+        Player.Instance.SetLaughs();
+        playerStats.upgrades.Clear();
+        playerStats.perks.Clear();
+
+        playerStats.prestigePoints += prestigePoints;
+        UIController.Instance.UpdateEntries();
+
+        Player.Instance.GetComponent<PerkUnlocker>().unlockedPerks.Clear();
     }
 
 }

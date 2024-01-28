@@ -3,6 +3,8 @@ using UnityEngine;
 public class PerkController : MonoBehaviour
 {
 
+    public static PerkController Instance;
+
     Player player;
     public void BuyPerk(PerkObject perkObject)
     {
@@ -30,10 +32,16 @@ public class PerkController : MonoBehaviour
 
         player.playerStats.damage.addModifier(result.perkObject.damageMultiplier);
         player.playerStats.damagePerSecond.addModifier(result.perkObject.dpsMultiplier);
+        player.playerStats.critChance.addBaseValue(result.perkObject.critChance);
+        player.playerStats.critMultiplier.addModifier(result.perkObject.critDamageMultiplier);
     }
 
     private void Start()
     {
         player = Player.Instance;
+    }
+    private void Awake()
+    {
+        Instance = this;
     }
 }

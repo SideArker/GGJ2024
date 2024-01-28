@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -18,6 +19,21 @@ public class PerkUnlocker : MonoBehaviour
     [SerializeField] PerkObject[] potionPerks;
     [SerializeField] PerkObject[] chipsPerks;
 
+
+    [Button]
+    public void UnlockAllPerks()
+    {
+        foreach (PerkObject perk in clownCostumePerks) unlockedPerks.Add(perk);
+        foreach (PerkObject perk in funnyJokesPerks) unlockedPerks.Add(perk);
+        foreach (PerkObject perk in soundEffectsPerks) unlockedPerks.Add(perk);
+        foreach (PerkObject perk in slipFallPerks) unlockedPerks.Add(perk);
+        foreach (PerkObject perk in prankPerks) unlockedPerks.Add(perk);
+        foreach (PerkObject perk in ticklingPerks) unlockedPerks.Add(perk);
+        foreach (PerkObject perk in potionPerks) unlockedPerks.Add(perk);
+        foreach (PerkObject perk in chipsPerks) unlockedPerks.Add(perk);
+
+        foreach(PerkObject perk in unlockedPerks) UIPerkController.instance.SpawnPerk(perk);
+    }
 
     public void UnlockPerks(UpgradeType upgradeType)
     {
@@ -75,11 +91,12 @@ public class PerkUnlocker : MonoBehaviour
         {
             if (player.playerStats.perks.Find(x => x.perkObject == perk) != null) return;
 
-            if (perk.upgradeNeeded == upg.upgradeObject && upg.Level >= perk.amountNeeded)
+            if (perk.upgradeNeeded == upg.upgradeObject && upg.Level >= perk.amountNeeded && !unlockedPerks.Contains(perk))
             {
                 Debug.Log("Found matching perk");
                 Debug.Log(perk);
                 unlockedPerks.Add(perk);
+                UIPerkController.instance.SpawnPerk(perk);
             };
         }
 

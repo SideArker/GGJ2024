@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 
 [System.Serializable]
 public class Enemy : MonoBehaviour
@@ -7,11 +8,12 @@ public class Enemy : MonoBehaviour
     Player player;
 
     [Header("Stats")]
-    float currentHealth;
-    float laughAward;
+    public float currentHealth = 10;
+    public float baseHealth = 10;
+    public float laughAward = 10;
 
     [Header("Other")]
-    EnemyObject enemyObject;
+    [HideInInspector] public EnemyObject enemyObject;
 
     bool runTick = false;
 
@@ -28,22 +30,30 @@ public class Enemy : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             currentHealth -= player.playerStats.damagePerSecond.getModValue();
-            Debug.Log("Damage dealt: " + player.playerStats.damagePerSecond.getModValue());
+            Player.Instance.SetFunmeter(1 - (currentHealth / baseHealth));
+            //Debug.Log("Damage dealt: " + player.playerStats.damagePerSecond.getModValue());
         }
 
     }
 
     public void TakeDamage()
     {
-        currentHealth -= player.playerStats.damage.getModValue();
+        bool isCrit = Random.Range(0,100) <= Player.Instance.playerStats.critChance.getModValue();
+        print(isCrit);
+        var playerStats = player.playerStats;
+        currentHealth -= playerStats.damage.getModValue() * (isCrit ? playerStats.critMultiplier.getModValue() : 1);
+        Player.Instance.SetFunmeter(1 - (currentHealth / baseHealth));
+        //print($"currH: {currentHealth}, baseH: {enemyObject.baseHealth}");
     }
 
     void Update()
     {
         if (currentHealth <= 0)
         {
-            Debug.Log("Enemy dead");
+            //Debug.Log("Enemy dead");
+            ZoneController.instance.isEnemyAlive = false;
             player.playerStats.laughs += laughAward;
+            Player.Instance.SetLaughs();
             ZoneController.instance.AutoNextStage();
             Destroy(gameObject);
         }
@@ -53,7 +63,8 @@ public class Enemy : MonoBehaviour
 
     public void SetStats(float difficulty, int stage)
     {
-        currentHealth = enemyObject.baseHealth + difficulty * stage * enemyObject.difficultyScaling * 1.75f;
+        currentHealth = enemyObject.baseHealth + difficulty * stage * enemyObject.difficultyScaling * ((stage+20)/10);
+        baseHealth = currentHealth;
         laughAward = enemyObject.LaughsDropped + difficulty * stage * enemyObject.difficultyScaling * 1.5f;
     }
 
@@ -61,7 +72,11 @@ public class Enemy : MonoBehaviour
     {
         player = Player.Instance;
 
-        currentHealth = enemyObject.baseHealth;
-        laughAward = enemyObject.LaughsDropped;
+        if(currentHealth == 0)
+        {
+            currentHealth = enemyObject.baseHealth;
+            laughAward = enemyObject.LaughsDropped;
+        }
+
     }
 }

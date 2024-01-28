@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 5
   upgradeName: Tickle
+  description: 
   damage: 0
   dps: 500
-  baseCost: 25000
+  baseCost: 40000
   multiPerLevel: 0.3
   icon: {fileID: 21300000, guid: 94f9d913367649b469d5167271964126, type: 3}

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e9e557bc394bd4996b34ff3f42ca07, type: 3}
+  m_Name: Cauldron5
+  m_EditorClassIdentifier: 
+  perkName: Fenomenal Potency
+  perkDescription: Increase  fun from Laughing Potion by  <color=#00FF00>1000%</color>
+  upgradeType: 6
+  upgradeNeeded: {fileID: 11400000, guid: f94d24688fe907746b4ccd8b43c7d7a6, type: 2}
+  amountNeeded: 250
+  upgradeGainMultiplier: 10
+  damageMultiplier: 0
+  dpsMultiplier: 0
+  Cost: 0
+  icon: {fileID: 21300000, guid: f86f23d6870131b49895d698e136a87f, type: 3}

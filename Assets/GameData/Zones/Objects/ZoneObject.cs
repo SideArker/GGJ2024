@@ -10,7 +10,7 @@ public class ZoneObject : ScriptableObject
 
     [Header("Enemies")]
     public List<EnemyObject> enemies;
-    public BossObject boss;
+    public List<BossObject> bosses;
 
     [Header("Other")]
     public Sprite zoneSprite;
