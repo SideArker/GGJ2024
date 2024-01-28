@@ -1,3 +1,4 @@
+using Managers.Sounds;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -14,6 +15,7 @@ public class CPS_Counter : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             clicks++;
+            SoundManager.Instance.PlayOneShoot(SoundManager.Instance.UISource, SoundManager.Instance.UICollection.clips[0]);
         }
 
         if(!isCycle)
