@@ -13734,7 +13734,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 44626147294933024, guid: aad8f4c1a42f1b34faf581313ebb84ad, type: 3}
       propertyPath: laughs
-      value: 69.2137
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 44626147294933024, guid: aad8f4c1a42f1b34faf581313ebb84ad, type: 3}
       propertyPath: damage.baseValue

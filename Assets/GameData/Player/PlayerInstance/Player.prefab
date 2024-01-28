@@ -50,6 +50,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b1c7212880e2d54898394d227f52d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  funmeter: {fileID: 0}
+  laughsDisplay: {fileID: 0}
+  funMeterStart: {r: 0, g: 0, b: 0, a: 0}
+  funMeterEnd: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &44626147294933024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,7 +72,13 @@ MonoBehaviour:
   damagePerSecond:
     baseValue: 0
     modifier: 1
-  laughs: 1000
+  critChance:
+    baseValue: 0
+    modifier: 1
+  critMultiplier:
+    baseValue: 0
+    modifier: 1
+  laughs: 0
   prestigePoints: 0
   prestigePointMultiplier: 0
   currentStage: 1
@@ -76,12 +86,12 @@ MonoBehaviour:
   currentZone: {fileID: 11400000, guid: 35599ec3df2f46a43af1881f5acc0b1c, type: 2}
   upgrades: []
   perks: []
+  prestigePerks: []
   highScores:
     totalLaughs: 0
     timeAfterPrestige: 0
     timeSinceStarted: 0
   currentDifficulty: 1
-  prestige: 0
 --- !u!114 &44626147294933027
 MonoBehaviour:
   m_ObjectHideFlags: 0

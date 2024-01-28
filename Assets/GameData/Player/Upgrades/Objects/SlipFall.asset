@@ -17,6 +17,6 @@ MonoBehaviour:
   description: 
   damage: 0
   dps: 25
-  baseCost: 1000
+  baseCost: 2000
   multiPerLevel: 0.3
   icon: {fileID: 21300000, guid: 94f9d913367649b469d5167271964126, type: 3}

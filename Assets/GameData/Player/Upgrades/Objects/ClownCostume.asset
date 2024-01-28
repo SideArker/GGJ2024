@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 0
   upgradeName: Clown Costume
-  damage: 0.1
+  description: 
+  damage: 1
   dps: 0
   baseCost: 10
   multiPerLevel: 0.15

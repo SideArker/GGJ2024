@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 2
   upgradeName: Sound Effects
+  description: 
   damage: 0
   dps: 5
-  baseCost: 100
+  baseCost: 300
   multiPerLevel: 0.3
   icon: {fileID: 21300000, guid: 94f9d913367649b469d5167271964126, type: 3}
