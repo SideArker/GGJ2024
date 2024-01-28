@@ -1,3 +1,4 @@
+using Managers.Sounds;
 using NaughtyAttributes;
 using System;
 using TMPro;
@@ -73,6 +74,8 @@ public class ZoneController : MonoBehaviour
     public void DamageEnemy()
     {
         //print("DAMAGE!!!!!!!!!!!");
+        SoundManager.Instance.PlayOneShoot(SoundManager.Instance.UISource, SoundManager.Instance.UICollection.clips[0]);
+
         if (clickCooldown) return;
         clickCooldown = true;
         if (currentBoss) currentBoss.TakeDamage();
