@@ -52,6 +52,7 @@ public class Enemy : MonoBehaviour
             //Debug.Log("Enemy dead");
             ZoneController.instance.isEnemyAlive = false;
             player.playerStats.laughs += laughAward;
+            Player.Instance.SetLaughs();
             ZoneController.instance.AutoNextStage();
             Destroy(gameObject);
         }

@@ -19,6 +19,7 @@ public class UpgradeController : MonoBehaviour
             player.playerStats.upgrades.Add(result);
         }
         player.playerStats.laughs -= result.currentCost;
+        Player.Instance.SetLaughs();
         
         result.currentCost += Mathf.RoundToInt(result.currentCost * result.upgradeObject.multiPerLevel);
 

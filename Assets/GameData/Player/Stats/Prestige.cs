@@ -15,6 +15,7 @@ public class Prestige : MonoBehaviour
         playerStats.damage.reset();
         playerStats.damagePerSecond.reset();
         playerStats.laughs = 0;
+        Player.Instance.SetLaughs();
         playerStats.upgrades = new List<Upgrade>();
         playerStats.perks = new List<Perk>();
     }

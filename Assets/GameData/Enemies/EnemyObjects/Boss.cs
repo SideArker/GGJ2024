@@ -59,6 +59,7 @@ public class Boss : MonoBehaviour
             Debug.Log("Boss dead");
             ZoneController.instance.isEnemyAlive = false;
             player.playerStats.laughs += laughAward;
+            Player.Instance.SetLaughs();
             ZoneController.instance.ChangeZone();
             timer.Stop();
             Destroy(gameObject);
