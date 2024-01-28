@@ -91,7 +91,7 @@ public class PerkUnlocker : MonoBehaviour
         {
             if (player.playerStats.perks.Find(x => x.perkObject == perk) != null) return;
 
-            if (perk.upgradeNeeded == upg.upgradeObject && upg.Level >= perk.amountNeeded)
+            if (perk.upgradeNeeded == upg.upgradeObject && upg.Level >= perk.amountNeeded && !unlockedPerks.Contains(perk))
             {
                 Debug.Log("Found matching perk");
                 Debug.Log(perk);
