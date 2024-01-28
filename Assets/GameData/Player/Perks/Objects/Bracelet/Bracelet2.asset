@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bracelet2
   m_EditorClassIdentifier: 
   perkName: Better Skills
-  perkDescription: Increase fun from tickling by 100%
+  perkDescription: Increase fun from tickling by  <color=#00FF00>100%</color
   upgradeType: 5
   upgradeNeeded: {fileID: 11400000, guid: c5a436cda82b4a04780e9ef4ab3e25f2, type: 2}
   amountNeeded: 25

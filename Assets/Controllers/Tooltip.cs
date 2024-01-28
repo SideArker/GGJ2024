@@ -60,10 +60,14 @@ public class Tooltip : MonoBehaviour
     {
 
         Vector3 mousePos = Input.mousePosition;
-        mousePos.z = -Camera.main.transform.position.z;
+        if(Camera.main.isActiveAndEnabled)
+        {
+            mousePos.z = -Camera.main.transform.position.z;
 
-        Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
+            Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
 
-        transform.position = worldPos + Vector3.right * 0.5f;
+            transform.position = worldPos + Vector3.right * 0.5f;
+        }
+
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Microphone3
   m_EditorClassIdentifier: 
   perkName: Top-Tier Sound Quality
-  perkDescription: Increase Sound Effects fun gain by 200%
+  perkDescription: Increase Sound Effects fun gain by <color=#00FF00>200%</color>
   upgradeType: 2
   upgradeNeeded: {fileID: 11400000, guid: 2a0ef3e88eedb484fbd7f724c6f55d79, type: 2}
   amountNeeded: 50

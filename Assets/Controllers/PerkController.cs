@@ -32,6 +32,8 @@ public class PerkController : MonoBehaviour
 
         player.playerStats.damage.addModifier(result.perkObject.damageMultiplier);
         player.playerStats.damagePerSecond.addModifier(result.perkObject.dpsMultiplier);
+        player.playerStats.critChance.addBaseValue(result.perkObject.critChance);
+        player.playerStats.critMultiplier.addModifier(result.perkObject.critDamageMultiplier);
     }
 
     private void Start()

@@ -7,7 +7,7 @@ public class PlayerStats : MonoBehaviour
     public Stat damage;
     public Stat damagePerSecond;
     public Stat critChance;
-    public Stat critMultilier;
+    public Stat critMultiplier;
 
     [Header("Currency")]
     public float laughs;

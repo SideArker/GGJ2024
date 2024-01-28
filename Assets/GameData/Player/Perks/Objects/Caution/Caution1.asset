@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Caution1
   m_EditorClassIdentifier: 
   perkName: Basic Comedic Timing
-  perkDescription: Increase fun gained from slipping by 100%
+  perkDescription: Increase fun gained from slipping by  <color=#00FF00>100%</color>
   upgradeType: 3
   upgradeNeeded: {fileID: 11400000, guid: c629ffa27dc0a454a9cf51f7fd77d386, type: 2}
   amountNeeded: 10

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CyberBrain6
   m_EditorClassIdentifier: 
   perkName: Legendary Connection
-  perkDescription: Increase fun from Brain Chips by 2500%
+  perkDescription: Increase fun from Brain Chips by  <color=#00FF00>2500%</color>
   upgradeType: 7
   upgradeNeeded: {fileID: 11400000, guid: 7ec29666699473249b91065c3c2a9213, type: 2}
   amountNeeded: 500

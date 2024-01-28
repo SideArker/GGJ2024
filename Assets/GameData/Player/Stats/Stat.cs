@@ -27,11 +27,16 @@ public class Stat
         baseValue -= value;
     }
 
-    /// <summary>
-    /// Adds a value to modifier
-    /// </summary>
-    /// <param name="modifier">the value to add</param>
-    public void addModifier(float modifier)
+    public void setBaseValue(float value)
+    {
+        baseValue = value;
+    }
+
+        /// <summary>
+        /// Adds a value to modifier
+        /// </summary>
+        /// <param name="modifier">the value to add</param>
+        public void addModifier(float modifier)
     {
         this.modifier += modifier;
     }
@@ -68,6 +73,7 @@ public class Stat
     /// </summary>
     public void reset()
     {
+        baseValue = 1f;
         modifier = 1f;
     }
 }

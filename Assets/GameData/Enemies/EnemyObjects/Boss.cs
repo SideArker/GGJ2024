@@ -27,8 +27,9 @@ public class Boss : MonoBehaviour
         runTick = true;
         while (currentHealth > 0)
         {
-            currentHealth -= player.playerStats.damagePerSecond.getModValue();
             yield return new WaitForSeconds(1);
+            currentHealth -= player.playerStats.damagePerSecond.getModValue();
+            Player.Instance.SetFunmeter(1 - (currentHealth / baseHealth));
         }
 
     }
@@ -44,9 +45,9 @@ public class Boss : MonoBehaviour
 
     public void TakeDamage()
     {
-        currentHealth -= player.playerStats.damage.getModValue();
+        bool isCrit = Random.Range(0, 100) <= Player.Instance.playerStats.critChance.getModValue();
         var playerStats = player.playerStats;
-        currentHealth -= playerStats.damage.getModValue();
+        currentHealth -= playerStats.damage.getModValue() * (isCrit ? playerStats.critMultiplier.getModValue() : 1);
         Player.Instance.SetFunmeter(1 - (currentHealth / baseHealth));
         //print($"currH: {currentHealth}, baseH: {enemyObject.baseHealth}");
 

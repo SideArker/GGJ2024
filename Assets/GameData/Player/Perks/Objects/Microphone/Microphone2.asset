@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Microphone2
   m_EditorClassIdentifier: 
   perkName: Better Sound Quality
-  perkDescription: Increase Sound Effects fun gain by 100%
+  perkDescription: Increase Sound Effects fun gain by <color=#00FF00>100%</color>
   upgradeType: 2
   upgradeNeeded: {fileID: 11400000, guid: 2a0ef3e88eedb484fbd7f724c6f55d79, type: 2}
   amountNeeded: 25

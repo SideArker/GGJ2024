@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             currentHealth -= player.playerStats.damagePerSecond.getModValue();
+            Player.Instance.SetFunmeter(1 - (currentHealth / baseHealth));
             //Debug.Log("Damage dealt: " + player.playerStats.damagePerSecond.getModValue());
         }
 
@@ -40,7 +41,7 @@ public class Enemy : MonoBehaviour
         bool isCrit = Random.Range(0,100) <= Player.Instance.playerStats.critChance.getModValue();
         print(isCrit);
         var playerStats = player.playerStats;
-        currentHealth -= playerStats.damage.getModValue() * (isCrit ? playerStats.critMultilier.getModValue() : 1);
+        currentHealth -= playerStats.damage.getModValue() * (isCrit ? playerStats.critMultiplier.getModValue() : 1);
         Player.Instance.SetFunmeter(1 - (currentHealth / baseHealth));
         //print($"currH: {currentHealth}, baseH: {enemyObject.baseHealth}");
     }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FartPillow5
   m_EditorClassIdentifier: 
   perkName: Fenomenal Funny Items
-  perkDescription: Increase fun gained from Pranks by 1000%
+  perkDescription: Increase fun gained from Pranks by  <color=#00FF00>1000%</color>
   upgradeType: 4
   upgradeNeeded: {fileID: 11400000, guid: 76f148443b8a8ff428e5d9ead38ddd50, type: 2}
   amountNeeded: 250

@@ -9,7 +9,7 @@ public class UIPerkController : MonoBehaviour
     Player player;
     public void SpawnPerk(PerkObject perkObject)
     {
-        GameObject perkClone = Instantiate(perkPrefab, transform);
+        GameObject perkClone = Instantiate(perkPrefab, perkPrefab.transform.parent);
         perkClone.transform.GetChild(0).GetComponent<Image>().sprite = perkObject.icon;
         perkClone.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(perkObject, perkClone));
         TooltipTrigger tooltipTrigger = perkClone.GetComponent<TooltipTrigger>();
@@ -23,6 +23,7 @@ public class UIPerkController : MonoBehaviour
     {
         if (player.playerStats.laughs < perk.Cost) return;
         PerkController.Instance.BuyPerk(perk);
+        TooltipSystem.Hide();
         Destroy(btn);
     }
 

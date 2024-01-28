@@ -8,7 +8,7 @@ public class UpgradeBtnUpdater : MonoBehaviour
     [Header("Fields")]
     [SerializeField] GameObject CostText;
     [SerializeField] GameObject UpgradeAmount;
-    [SerializeField] UpgradeObject defaultObject;
+    public UpgradeObject defaultObject;
     public void UpdateData(UpgradeObject upgradeObject)
     {
         Upgrade result = Player.Instance.playerStats.upgrades.Find(x => x.upgradeObject == upgradeObject);
@@ -18,7 +18,16 @@ public class UpgradeBtnUpdater : MonoBehaviour
             CostText.GetComponent<TMP_Text>().text = result.currentCost.ToString();
             UpgradeAmount.GetComponent<TMP_Text>().text = result.Level.ToString();
             tooltipTrigger.header = result.Name;
-            tooltipTrigger.content = result.upgradeObject.description;
+
+            string contentText = "";
+
+            if (defaultObject.damage > 0) contentText += $"Your clicks do <b><color=#00FF00>{defaultObject.damage}</color></b> more fun";
+            if (defaultObject.dps > 0)
+            {
+                if (contentText != "") contentText += "\n";
+                contentText += $"Generates <b><color=#00FF00>{defaultObject.dps}</color></b> per second";
+            }
+            tooltipTrigger.content = contentText;
         }
         else
         {
@@ -26,7 +35,15 @@ public class UpgradeBtnUpdater : MonoBehaviour
             UpgradeAmount.GetComponent<TMP_Text>().text = "0";
 
             tooltipTrigger.header = defaultObject.upgradeName;
-            tooltipTrigger.content = defaultObject.description;
+            string contentText = "";
+
+            if (defaultObject.damage > 0) contentText += $"Your clicks do <color=#00FF00>{defaultObject.damage}</color> more fun";
+            if (defaultObject.dps > 0)
+            {
+                if (contentText != "") contentText += "\n";
+                contentText += $"Generates <color=#00FF00>{defaultObject.dps}</color> fun per second"; 
+            }
+            tooltipTrigger.content = contentText;
         }
     }
 

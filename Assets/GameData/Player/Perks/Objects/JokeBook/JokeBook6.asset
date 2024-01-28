@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: JokeBook6
   m_EditorClassIdentifier: 
   perkName: Legendary Jokes
-  perkDescription: Increase Jokes fun gain by 5000%
+  perkDescription: Increase Jokes fun gain by <color=#00FF00>5000%</color>
   upgradeType: 1
   upgradeNeeded: {fileID: 11400000, guid: 8a3e77ab607a27e4bbf3d0b4f8b16dec, type: 2}
   amountNeeded: 500

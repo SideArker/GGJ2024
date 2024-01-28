@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     [SerializeField] Slider funmeter;
     [SerializeField] TMP_Text laughsDisplay;
 
+    [SerializeField] Color funMeterStart;
+    [SerializeField] Color funMeterEnd;
+
     private void Awake()
     {
         Instance = this;
@@ -22,12 +25,12 @@ public class Player : MonoBehaviour
     }
     public void SetFunmeter(float value)
     {
-        print(value);
         funmeter.value = value;
+        funmeter.fillRect.GetComponent<Image>().color = Color.Lerp(funMeterStart, funMeterEnd, value);
     }
     public void SetLaughs()
     {
         //print(value);
-        laughsDisplay.text = "Laughs: " + playerStats.laughs;
+        laughsDisplay.text = NumShortener.Shorten((decimal) playerStats.laughs);
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FartPillow6
   m_EditorClassIdentifier: 
   perkName: Legendary Funny Items
-  perkDescription: Increase fun gained from Pranks by 2500%
+  perkDescription: Increase fun gained from Pranks by  <color=#00FF00>2500%</color>
   upgradeType: 4
   upgradeNeeded: {fileID: 11400000, guid: 76f148443b8a8ff428e5d9ead38ddd50, type: 2}
   amountNeeded: 500

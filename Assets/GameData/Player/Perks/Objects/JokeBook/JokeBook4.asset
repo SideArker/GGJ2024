@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: JokeBook4
   m_EditorClassIdentifier: 
   perkName: Amazing Jokes
-  perkDescription: Increase Jokes fun gain by 1000%
+  perkDescription: Increase Jokes fun gain by <color=#00FF00>1000%</color>
   upgradeType: 1
   upgradeNeeded: {fileID: 11400000, guid: 8a3e77ab607a27e4bbf3d0b4f8b16dec, type: 2}
   amountNeeded: 100

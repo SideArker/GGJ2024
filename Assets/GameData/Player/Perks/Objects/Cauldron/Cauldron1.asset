@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cauldron1
   m_EditorClassIdentifier: 
   perkName: Basic Potency
-  perkDescription: Increase  fun from Laughing Potion by 100%
+  perkDescription: Increase  fun from Laughing Potion by  <color=#00FF00>100%</color>
   upgradeType: 6
   upgradeNeeded: {fileID: 11400000, guid: f94d24688fe907746b4ccd8b43c7d7a6, type: 2}
   amountNeeded: 10
