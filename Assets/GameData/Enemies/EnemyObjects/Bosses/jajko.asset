@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f8e879933c5dc4abdd7ab3f99628af, type: 3}
+  m_Name: jajko
+  m_EditorClassIdentifier: 
+  baseHealth: 20
+  LaughsDropped: 1000
+  regenTime: 5
+  difficultyScaling: 2
+  normalSprites:
+  - {fileID: 21300000, guid: 536e41b922d627b418531fb87acb8eb7, type: 3}
+  - {fileID: 21300000, guid: 84582dae833526e4f9118f7a7a044bad, type: 3}
+  laughingSprites:
+  - {fileID: 21300000, guid: a7d1210792f9bc5439b9a8ca22f5b9ae, type: 3}
+  - {fileID: 21300000, guid: 1d5cc6c41841fec4cb3a3cc7555a592d, type: 3}

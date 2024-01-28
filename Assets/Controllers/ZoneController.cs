@@ -100,7 +100,7 @@ public class ZoneController : MonoBehaviour
         {
             Debug.Log("Spawn boss");
             Boss boss = Instantiate(bossPrefab, spawnPos);
-            boss.SetBossObject(currentZone.boss);
+            boss.SetBossObject(currentZone.bosses[UnityEngine.Random.Range(0, currentZone.bosses.Count)]);
             boss.SetStats(player.playerStats.currentDifficulty, player.playerStats.currentStage);
             currentBoss = boss;
         }

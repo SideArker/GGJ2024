@@ -14,7 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoneName: Zone1
   enemies:
+  - {fileID: 11400000, guid: 445396a90a57bc8489c2a4f5d050fcc3, type: 2}
+  - {fileID: 11400000, guid: 03e974e3b2fbde547ad20618c2a8f2df, type: 2}
+  - {fileID: 11400000, guid: d3aa85d8017a7d4468acb04ea7a5a28b, type: 2}
   - {fileID: 11400000, guid: c0edb97aaa154a64cac09a494c4fa6fd, type: 2}
   - {fileID: 11400000, guid: c3a3ced3befa39f4197dbf3e74eb9748, type: 2}
-  boss: {fileID: 11400000, guid: 373d5505e335f8045bf1009b6a5f3c04, type: 2}
+  - {fileID: 11400000, guid: 642dc656a273ccc479b5363fd2359d17, type: 2}
+  bosses:
+  - {fileID: 11400000, guid: 373d5505e335f8045bf1009b6a5f3c04, type: 2}
+  - {fileID: 11400000, guid: 1bdf00bc67c4d8f44abeb3a0022ee3d8, type: 2}
+  - {fileID: 11400000, guid: d59602c28bf759440b34289bf4413014, type: 2}
   zoneSprite: {fileID: 0}

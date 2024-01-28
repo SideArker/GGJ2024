@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180453ec4ecfe6c4685e8bfce6b984e1, type: 3}
+  m_Name: Chlop
+  m_EditorClassIdentifier: 
+  baseHealth: 10
+  LaughsDropped: 5
+  difficultyScaling: 1
+  normalSprites:
+  - {fileID: 21300000, guid: 5a5bb31593213234da4fcfbd980fe739, type: 3}
+  - {fileID: 21300000, guid: 1b2ec124802dd0542bdb31c5e57661cf, type: 3}
+  laughingSprites:
+  - {fileID: 21300000, guid: 401564e124d68f54abc8a9f7c8b2d433, type: 3}
+  - {fileID: 21300000, guid: 56bb453a3df3e544988c54aae9aa805e, type: 3}
