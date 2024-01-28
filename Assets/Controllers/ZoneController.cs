@@ -84,6 +84,7 @@ public class ZoneController : MonoBehaviour
 
     public void ChangeEnemy()
     {
+        Player.Instance.SetFunmeter(0);
 
         if (player.playerStats.highestStage < player.playerStats.currentStage)
         {
