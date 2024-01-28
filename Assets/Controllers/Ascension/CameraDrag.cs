@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraDrag : MonoBehaviour
 {
-    float dragSpeed = 2.5f;
+    float dragSpeed = 1f;
 
     float outerLeft = -10f;
     float outerRight = 10f;
